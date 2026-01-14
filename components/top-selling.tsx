@@ -11,7 +11,7 @@ export default function TopSelling() {
         <ProductList />
         <div className="text-center mt-9">
           <Button
-            className="md:w-36 w-full md:h-14  px-20  font-medium  rounded-full border-[#000000] "
+            className="md:w-36 cursor-pointer w-full md:h-14  px-20  font-medium  rounded-full border-[#000000] "
             variant="outline"
           >
             View All

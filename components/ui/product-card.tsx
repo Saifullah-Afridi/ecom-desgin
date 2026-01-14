@@ -4,13 +4,15 @@ import Image from "next/image";
 export default function ProductCard() {
   return (
     <div className="">
-      <Image
-        src="/images/new.jpg"
-        width="296"
-        height="298"
-        alt="product picture"
-        className="rounded-md object-contain"
-      />
+      <div className="w-[198px] md:w-[300px]">
+        <Image
+          src="/images/new.jpg"
+          width="296"
+          height="298"
+          alt="product picture"
+          className="rounded-md object-contain w-full"
+        />
+      </div>
       <div className="mt-3 flex flex-col gap-1 md:gap-2">
         <span className="font-bold md:text-xl">Vertical striped Shirt</span>
         <div className="flex gap-3 items-center">

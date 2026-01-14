@@ -5,7 +5,7 @@ import ProductCard from "./ui/product-card";
 export default function NewArrival() {
   return (
     <div className="px-20 my-12">
-      <div className="  md:my-16 ">
+      <div className="md:my-16 ">
         <h2 className="text-center text-[32px]  md:text-[48px] mb-[55px]">
           New Arrival
         </h2>

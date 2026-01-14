@@ -2,17 +2,9 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div
-      className="min-h-screen bg-[#F2F0F1]     md:bg-[url(/images/HeroSection.png)]  md:bg-center  md:bg-cover md:bg-no-repeat md:overflow-clip    "
-      // style={{
-      //   backgroundImage: "url('HeroSection.png')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "center",
-      //   backgroundSize: "cover",
-      // }}
-    >
-      <div className="  container mx-auto flex    flex-col items-start px-4 pr-4 md:pr-0 md:pl-20 justify-center gap-2 md:gap-8 py-[85px]     ">
-        <h1 className=" text-[36px] font-bold md:font-normal md:text-[64px] leading-[34px]  md:leading-16  uppercase">
+    <div className="min-h-screen bg-[#F2F0F1]     md:bg-[url(/images/HeroSection.png)]  md:bg-center  md:bg-cover md:bg-no-repeat md:overflow-clip    ">
+      <div className="container flex    flex-col items-start px-4 pr-4 md:pr-0 md:pl-20 justify-center gap-2 md:gap-8 py-[85px]     ">
+        <h1 className=" text-[36px] font-bold md:font-normal md:text-[64px] leading-9  md:leading-16  uppercase">
           FIND CLOTHES
           <br /> THAT MATCHES <br /> YOUR STYLE
         </h1>

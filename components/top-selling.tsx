@@ -1,13 +1,12 @@
 import ProductList from "./product-list";
 import { Button } from "./ui/button";
-import ProductCard from "./ui/product-card";
 
-export default function NewArrival() {
+export default function TopSelling() {
   return (
-    <div className="px-20 my-12">
-      <div className="  md:my-16 ">
-        <h2 className="text-center text-[32px]  md:text-[48px] mb-[55px]">
-          New Arrival
+    <div className="px-20 my-16">
+      <div className="border-b-blue-900 ">
+        <h2 className="text-center uppercase text-[32px]  md:text-[48px] mb-[55px]">
+          top selling
         </h2>
         <ProductList />
         <div className="text-center mt-9">

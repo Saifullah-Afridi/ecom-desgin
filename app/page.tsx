@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import Nav1 from "@/components/Nav1";
 import Navbar from "@/components/Navbar";
 import NewArrival from "@/components/NewArrival";
+import TopSelling from "@/components/top-selling";
 import { Separator } from "@/components/ui/separator";
 
 export default function page() {
@@ -16,6 +17,7 @@ export default function page() {
       <div className="px-20">
         <Separator className="my-[64px]   " />
       </div>
+      <TopSelling />
     </div>
   );
 }

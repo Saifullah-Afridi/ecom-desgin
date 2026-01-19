@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Quick Reference Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cheat-sheet-styles.css" />
+  </head>
+  <body>
+    <div class="tutorial-container">
+      <header class="tutorial-header cheat-header">
+        <h1>📋 Flexbox Cheat Sheet</h1>
+        <p class="subtitle">Quick Reference Guide for All Flexbox Properties</p>
+        <div class="download-section">
+          <button onclick="generatePDF()" class="download-btn">
+            📄 Download as PDF
+          </button>
+          <button onclick="printCheatSheet()" class="download-btn">
+            🖨️ Print
+          </button>
+        </div>
+      </header>
+
+      <nav class="page-nav">
+        <a href="advanced.html">← Advanced Techniques</a>
+        <a href="index.html">🏠 Back to Start</a>
+      </nav>
+
+      <!-- Quick Property Reference -->
+      <section class="cheat-section">
+        <h2>🎯 Quick Property Reference</h2>
+
+        <div class="property-grid">
+          <div class="property-category">
+            <h3>Container Properties</h3>
+            <div class="property-list">
+              <div class="property-item">
+                <code>display: flex</code>
+                <span class="description">Creates flex container</span>
+              </div>
+              <div class="property-item">
+                <code>flex-direction</code>
+                <span class="description">Sets main axis direction</span>
+                <div class="values">
+                  row | row-reverse | column | column-reverse
+                </div>
+              </div>
+              <div class="property-item">
+                <code>flex-wrap</code>
+                <span class="description">Controls wrapping</span>
+                <div class="values">nowrap | wrap | wrap-reverse</div>
+              </div>
+              <div class="property-item">
+                <code>justify-content</code>
+                <span class="description">Aligns along main axis</span>
+                <div class="values">
+                  flex-start | flex-end | center | space-between | space-around
+                  | space-evenly
+                </div>
+              </div>
+              <div class="property-item">
+                <code>align-items</code>
+                <span class="description">Aligns along cross axis</span>
+                <div class="values">
+                  stretch | flex-start | flex-end | center | baseline
+                </div>
+              </div>
+              <div class="property-item">
+                <code>align-content</code>
+                <span class="description">Aligns wrapped lines</span>
+                <div class="values">
+                  stretch | flex-start | flex-end | center | space-between |
+                  space-around
+                </div>
+              </div>
+              <div class="property-item">
+                <code>gap</code>
+                <span class="description">Space between items</span>
+                <div class="values">length | percentage</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-category">
+            <h3>Item Properties</h3>
+            <div class="property-list">
+              <div class="property-item">
+                <code>flex-grow</code>
+                <span class="description">Growth factor</span>
+                <div class="values">number (default: 0)</div>
+              </div>
+              <div class="property-item">
+                <code>flex-shrink</code>
+                <span class="description">Shrink factor</span>
+                <div class="values">number (default: 1)</div>
+              </div>
+              <div class="property-item">
+                <code>flex-basis</code>
+                <span class="description">Initial size</span>
+                <div class="values">auto | length | percentage</div>
+              </div>
+              <div class="property-item">
+                <code>flex</code>
+                <span class="description">Shorthand for grow/shrink/basis</span>
+                <div class="values">none | auto | [ grow shrink? basis? ]</div>
+              </div>
+              <div class="property-item">
+                <code>align-self</code>
+                <span class="description">Override container align-items</span>
+                <div class="values">
+                  auto | stretch | flex-start | flex-end | center | baseline
+                </div>
+              </div>
+              <div class="property-item">
+                <code>order</code>
+                <span class="description">Visual order</span>
+                <div class="values">integer (default: 0)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Examples -->
+      <section class="cheat-section">
+        <h2>👀 Visual Examples</h2>
+
+        <div class="visual-examples-grid">
+          <!-- Flex Direction Examples -->
+          <div class="example-card">
+            <h4>flex-direction</h4>
+            <div class="example-demo">
+              <div class="mini-container row">
+                <div class="mini-item">1</div>
+                <div class="mini-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>flex-direction: row</code>
+            </div>
+            <div class="example-demo">
+              <div class="mini-container column">
+                <div class="mini-item">1</div>
+                <div class="mini-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>flex-direction: column</code>
+            </div>
+          </div>
+
+          <!-- Justify Content Examples -->
+          <div class="example-card">
+            <h4>justify-content</h4>
+            <div class="example-demo">
+              <div class="mini-container justify-start">
+                <div class="mini-item">1</div>
+                <div class="mini-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>justify-content: flex-start</code>
+            </div>
+            <div class="example-demo">
+              <div class="mini-container justify-center">
+                <div class="mini-item">1</div>
+                <div class="mini-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>justify-content: center</code>
+            </div>
+            <div class="example-demo">
+              <div class="mini-container justify-between">
+                <div class="mini-item">1</div>
+                <div class="mini-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>justify-content: space-between</code>
+            </div>
+          </div>
+
+          <!-- Align Items Examples -->
+          <div class="example-card">
+            <h4>align-items</h4>
+            <div class="example-demo">
+              <div class="mini-container align-start tall">
+                <div class="mini-item">1</div>
+                <div class="mini-item tall-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>align-items: flex-start</code>
+            </div>
+            <div class="example-demo">
+              <div class="mini-container align-center tall">
+                <div class="mini-item">1</div>
+                <div class="mini-item tall-item">2</div>
+                <div class="mini-item">3</div>
+              </div>
+              <code>align-items: center</code>
+            </div>
+          </div>
+
+          <!-- Flex Examples -->
+          <div class="example-card">
+            <h4>flex property</h4>
+            <div class="example-demo">
+              <div class="mini-container flex-demo">
+                <div class="mini-item" style="flex: 1; background: #e74c3c">
+                  flex: 1
+                </div>
+                <div class="mini-item" style="flex: 2; background: #3498db">
+                  flex: 2
+                </div>
+                <div class="mini-item" style="flex: 1; background: #2ecc71">
+                  flex: 1
+                </div>
+              </div>
+            </div>
+            <div class="example-demo">
+              <div class="mini-container flex-demo">
+                <div class="mini-item" style="flex: none; background: #e74c3c">
+                  flex: none
+                </div>
+                <div class="mini-item" style="flex: 1; background: #3498db">
+                  flex: 1
+                </div>
+                <div class="mini-item" style="flex: none; background: #2ecc71">
+                  flex: none
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Patterns -->
+      <section class="cheat-section">
+        <h2>🎨 Common Patterns</h2>
+
+        <div class="patterns-grid">
+          <div class="pattern-example">
+            <h4>Perfect Centering</h4>
+            <div class="pattern-demo centering">
+              <div class="centered-box">Centered!</div>
+            </div>
+            <code class="pattern-code">
+              .container { display: flex; justify-content: center; align-items:
+              center; height: 100vh; }
+            </code>
+          </div>
+
+          <div class="pattern-example">
+            <h4>Navigation Bar</h4>
+            <div class="pattern-demo">
+              <div class="nav-example">
+                <div class="nav-logo">Logo</div>
+                <div class="nav-spacer"></div>
+                <div class="nav-links">
+                  <span>Home</span>
+                  <span>About</span>
+                  <span>Contact</span>
+                </div>
+              </div>
+            </div>
+            <code class="pattern-code">
+              .navbar { display: flex; align-items: center; } .nav-spacer {
+              flex-grow: 1; }
+            </code>
+          </div>
+
+          <div class="pattern-example">
+            <h4>Equal Height Cards</h4>
+            <div class="pattern-demo">
+              <div class="cards-example">
+                <div class="card-example">
+                  <h5>Card 1</h5>
+                  <p>Short content</p>
+                  <button>Action</button>
+                </div>
+                <div class="card-example">
+                  <h5>Card 2</h5>
+                  <p>
+                    Much longer content that takes up more space and shows the
+                    flexibility
+                  </p>
+                  <button>Action</button>
+                </div>
+                <div class="card-example">
+                  <h5>Card 3</h5>
+                  <p>Medium content</p>
+                  <button>Action</button>
+                </div>
+              </div>
+            </div>
+            <code class="pattern-code">
+              .cards { display: flex; gap: 20px; } .card { flex: 1; display:
+              flex; flex-direction: column; } .card button { margin-top: auto; }
+            </code>
+          </div>
+
+          <div class="pattern-example">
+            <h4>Sidebar Layout</h4>
+            <div class="pattern-demo">
+              <div class="sidebar-example">
+                <div class="sidebar">Sidebar</div>
+                <div class="main-content">Main Content</div>
+              </div>
+            </div>
+            <code class="pattern-code">
+              .layout { display: flex; } .sidebar { flex: 0 0 200px; } .main {
+              flex: 1; }
+            </code>
+          </div>
+
+          <div class="pattern-example">
+            <h4>Responsive Form</h4>
+            <div class="pattern-demo">
+              <div class="form-example">
+                <div class="form-row">
+                  <input type="text" placeholder="First Name" />
+                  <input type="text" placeholder="Last Name" />
+                </div>
+                <div class="form-row">
+                  <input type="email" placeholder="Email" style="flex: 1" />
+                </div>
+              </div>
+            </div>
+            <code class="pattern-code">
+              .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+              .form-row input { flex: 1; }
+            </code>
+          </div>
+
+          <div class="pattern-example">
+            <h4>Media Object</h4>
+            <div class="pattern-demo">
+              <div class="media-example">
+                <div class="media-image">IMG</div>
+                <div class="media-content">
+                  <h6>Media Heading</h6>
+                  <p>Flexible content area</p>
+                </div>
+              </div>
+            </div>
+            <code class="pattern-code">
+              .media { display: flex; gap: 15px; } .media-image { flex: 0 0
+              auto; } .media-content { flex: 1; }
+            </code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Responsive Breakpoints -->
+      <section class="cheat-section">
+        <h2>📱 Responsive Breakpoints</h2>
+
+        <div class="breakpoints-reference">
+          <div class="breakpoint-card">
+            <h4>📱 Mobile First</h4>
+            <code class="breakpoint-code">
+              /* Base styles (Mobile) */ .container { display: flex;
+              flex-direction: column; } /* Tablet and up */ @media (min-width:
+              768px) { .container { flex-direction: row; } } /* Desktop and up
+              */ @media (min-width: 1024px) { .container { max-width: 1200px;
+              margin: 0 auto; } }
+            </code>
+          </div>
+
+          <div class="breakpoint-card">
+            <h4>📏 Standard Breakpoints</h4>
+            <div class="breakpoint-table">
+              <div class="bp-row header">
+                <div>Device</div>
+                <div>Size</div>
+                <div>Media Query</div>
+              </div>
+              <div class="bp-row">
+                <div>📱 Mobile</div>
+                <div>320px - 767px</div>
+                <div><code>@media (max-width: 767px)</code></div>
+              </div>
+              <div class="bp-row">
+                <div>📊 Tablet</div>
+                <div>768px - 1023px</div>
+                <div><code>@media (min-width: 768px)</code></div>
+              </div>
+              <div class="bp-row">
+                <div>🖥️ Desktop</div>
+                <div>1024px+</div>
+                <div><code>@media (min-width: 1024px)</code></div>
+              </div>
+              <div class="bp-row">
+                <div>🖥️ Large</div>
+                <div>1200px+</div>
+                <div><code>@media (min-width: 1200px)</code></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browser Support -->
+      <section class="cheat-section">
+        <h2>🌐 Browser Support</h2>
+
+        <div class="browser-support">
+          <div class="support-grid">
+            <div class="browser-item">
+              <div class="browser-icon chrome">🌏</div>
+              <div class="browser-name">Chrome</div>
+              <div class="browser-version">29+</div>
+              <div class="support-status supported">✅ Full</div>
+            </div>
+            <div class="browser-item">
+              <div class="browser-icon firefox">🦊</div>
+              <div class="browser-name">Firefox</div>
+              <div class="browser-version">28+</div>
+              <div class="support-status supported">✅ Full</div>
+            </div>
+            <div class="browser-item">
+              <div class="browser-icon safari">🧭</div>
+              <div class="browser-name">Safari</div>
+              <div class="browser-version">9+</div>
+              <div class="support-status supported">✅ Full</div>
+            </div>
+            <div class="browser-item">
+              <div class="browser-icon edge">🌐</div>
+              <div class="browser-name">Edge</div>
+              <div class="browser-version">12+</div>
+              <div class="support-status supported">✅ Full</div>
+            </div>
+            <div class="browser-item">
+              <div class="browser-icon ie">🌐</div>
+              <div class="browser-name">IE</div>
+              <div class="browser-version">11</div>
+              <div class="support-status partial">⚠️ Partial</div>
+            </div>
+            <div class="browser-item">
+              <div class="browser-icon mobile">📱</div>
+              <div class="browser-name">Mobile</div>
+              <div class="browser-version">iOS 7+</div>
+              <div class="support-status supported">✅ Full</div>
+            </div>
+          </div>
+
+          <div class="ie-warning">
+            <h4>⚠️ IE11 Limitations</h4>
+            <ul>
+              <li>No gap property support</li>
+              <li>Flex-shrink bugs with flex-basis</li>
+              <li>Min-height issues on flex containers</li>
+              <li>Use Autoprefixer for vendor prefixes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Debugging Tips -->
+      <section class="cheat-section">
+        <h2>🐛 Debugging Tips</h2>
+
+        <div class="debugging-tips">
+          <div class="tip-card">
+            <h4>🔍 Visual Debugging</h4>
+            <ul>
+              <li>
+                Add <code>border: 1px solid red;</code> to see container bounds
+              </li>
+              <li>Use browser dev tools' flexbox inspector</li>
+              <li>Check for <code>min-width/max-width</code> conflicts</li>
+              <li>
+                Verify parent container has defined height (for column layouts)
+              </li>
+            </ul>
+          </div>
+
+          <div class="tip-card">
+            <h4>🔧 Common Issues & Fixes</h4>
+            <div class="issue-fix">
+              <div class="issue">❌ Items not wrapping</div>
+              <div class="fix">✅ Add <code>flex-wrap: wrap</code></div>
+            </div>
+            <div class="issue-fix">
+              <div class="issue">❌ Item overflowing container</div>
+              <div class="fix">
+                ✅ Set <code>min-width: 0</code> on flex item
+              </div>
+            </div>
+            <div class="issue-fix">
+              <div class="issue">❌ Vertical centering not working</div>
+              <div class="fix">✅ Ensure parent has defined height</div>
+            </div>
+            <div class="issue-fix">
+              <div class="issue">❌ Last item not stretching</div>
+              <div class="fix">
+                ✅ Use <code>flex: 1</code> instead of <code>flex-grow: 1</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <h4>⚡ Performance Tips</h4>
+            <ul>
+              <li>Avoid animating <code>flex</code> properties</li>
+              <li>Use <code>transform</code> for animations instead</li>
+              <li>Minimize nested flex containers</li>
+              <li>Use <code>will-change</code> for animated elements</li>
+              <li>Test performance on slower devices</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cheat-section download-section-final">
+        <h2>💾 Save This Reference</h2>
+        <div class="download-options">
+          <button onclick="generatePDF()" class="download-option">
+            <div class="option-icon">📄</div>
+            <div class="option-text">
+              <h4>Download PDF</h4>
+              <p>Get a printable version of this cheat sheet</p>
+            </div>
+          </button>
+
+          <button onclick="bookmarkPage()" class="download-option">
+            <div class="option-icon">🔖</div>
+            <div class="option-text">
+              <h4>Bookmark Page</h4>
+              <p>Save for quick reference</p>
+            </div>
+          </button>
+
+          <button onclick="shareCheatSheet()" class="download-option">
+            <div class="option-icon">📤</div>
+            <div class="option-text">
+              <h4>Share</h4>
+              <p>Send to colleagues and friends</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <footer class="tutorial-footer">
+        <div class="footer-content">
+          <p>
+            🎉 Congratulations! You've completed the Complete Flexbox Tutorial!
+          </p>
+          <div class="social-links">
+            <span>Share your new Flexbox skills:</span>
+            <button onclick="shareProgress('twitter')">Twitter</button>
+            <button onclick="shareProgress('linkedin')">LinkedIn</button>
+            <button onclick="shareProgress('facebook')">Facebook</button>
+          </div>
+        </div>
+        <div class="page-navigation">
+          <button onclick="window.location.href = 'advanced.html'">
+            ← Advanced Techniques
+          </button>
+          <button onclick="window.location.href = 'index.html'">
+            🏠 Start Over
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="cheat-sheet-script.js"></script>
+  </body>
+</html>

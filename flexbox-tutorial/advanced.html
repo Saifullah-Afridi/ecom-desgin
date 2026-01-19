@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Flexbox Techniques</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive-styles.css" />
+    <link rel="stylesheet" href="advanced-styles.css" />
+  </head>
+  <body>
+    <div class="tutorial-container">
+      <header class="tutorial-header">
+        <h1>🚀 Advanced Flexbox Techniques</h1>
+        <p class="subtitle">Master Complex Layouts and Professional Patterns</p>
+      </header>
+
+      <nav class="page-nav">
+        <a href="responsive-design.html">← Responsive Design</a>
+        <a href="cheat-sheet.html">Cheat Sheet →</a>
+      </nav>
+
+      <section id="advanced-techniques" class="tutorial-section">
+        <h2>⚡ 7. Advanced Flexbox Techniques</h2>
+
+        <div class="content-block">
+          <h3>Nested Flexbox Layouts</h3>
+          <p>Create complex layouts by combining multiple flex containers.</p>
+
+          <div class="advanced-demo">
+            <h4>Complex Dashboard Layout</h4>
+            <div class="dashboard-demo">
+              <div class="dashboard-header">
+                <div class="header-section">
+                  <div class="logo-area">Logo</div>
+                  <div class="search-area">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      class="search-input"
+                    />
+                  </div>
+                  <div class="user-area">
+                    <div class="notification-btn">🔔</div>
+                    <div class="profile-btn">👤</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dashboard-body">
+                <div class="sidebar-nav">
+                  <div class="nav-item">📊 Dashboard</div>
+                  <div class="nav-item">📈 Analytics</div>
+                  <div class="nav-item">⚙️ Settings</div>
+                  <div class="nav-item">👥 Users</div>
+                </div>
+
+                <div class="main-dashboard">
+                  <div class="content-header">
+                    <h2>Dashboard Overview</h2>
+                    <div class="action-buttons">
+                      <button class="btn-primary">Add New</button>
+                      <button class="btn-secondary">Export</button>
+                    </div>
+                  </div>
+
+                  <div class="stats-grid">
+                    <div class="stat-card">
+                      <h3>1,234</h3>
+                      <p>Total Users</p>
+                    </div>
+                    <div class="stat-card">
+                      <h3>$12,345</h3>
+                      <p>Revenue</p>
+                    </div>
+                    <div class="stat-card">
+                      <h3>98.5%</h3>
+                      <p>Uptime</p>
+                    </div>
+                    <div class="stat-card">
+                      <h3>45</h3>
+                      <p>Active Projects</p>
+                    </div>
+                  </div>
+
+                  <div class="charts-section">
+                    <div class="chart-container">
+                      <div class="chart-placeholder">📈 Sales Chart</div>
+                    </div>
+                    <div class="recent-activity">
+                      <h4>Recent Activity</h4>
+                      <div class="activity-item">User John logged in</div>
+                      <div class="activity-item">New order #1234 created</div>
+                      <div class="activity-item">Payment processed</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <code class="css-code">
+              /* Nested Flexbox Dashboard */ .dashboard { display: flex;
+              flex-direction: column; height: 100vh; } .dashboard-header { flex:
+              0 0 auto; } .header-section { display: flex; align-items: center;
+              justify-content: space-between; padding: 15px 20px; } .search-area
+              { flex: 1; max-width: 400px; margin: 0 20px; } .dashboard-body {
+              display: flex; flex: 1; } .sidebar-nav { flex: 0 0 200px; display:
+              flex; flex-direction: column; } .main-dashboard { flex: 1;
+              display: flex; flex-direction: column; } .stats-grid { display:
+              flex; gap: 20px; flex-wrap: wrap; } .stat-card { flex: 1;
+              min-width: 200px; }
+            </code>
+          </div>
+
+          <h3>Dynamic Content Sizing</h3>
+          <div class="advanced-demo">
+            <h4>🎮 Interactive Content Resizing</h4>
+            <div class="controls">
+              <label>Content Amount:</label>
+              <input
+                type="range"
+                min="1"
+                max="10"
+                value="3"
+                onchange="updateContentAmount(this.value)"
+              />
+              <span id="content-amount">3 items</span>
+            </div>
+
+            <div class="dynamic-container" id="dynamic-demo">
+              <div class="dynamic-item">Item 1</div>
+              <div class="dynamic-item">Item 2</div>
+              <div class="dynamic-item">Item 3</div>
+            </div>
+
+            <div class="dynamic-info">
+              <p>
+                🔍 <strong>Behavior:</strong>
+                <span id="dynamic-behavior"
+                  >Items fit naturally in container</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <h3>Advanced Animation Techniques</h3>
+          <div class="animation-showcase">
+            <h4>Smooth Flexbox Transitions</h4>
+
+            <div class="animation-demo-grid">
+              <div class="animation-card">
+                <h5>Hover Growth</h5>
+                <div class="hover-demo">
+                  <div class="hover-item">Hover me!</div>
+                  <div class="hover-item">Hover me!</div>
+                  <div class="hover-item">Hover me!</div>
+                </div>
+              </div>
+
+              <div class="animation-card">
+                <h5>Sequential Animation</h5>
+                <div class="sequential-demo">
+                  <div class="seq-item" style="--delay: 0">1</div>
+                  <div class="seq-item" style="--delay: 1">2</div>
+                  <div class="seq-item" style="--delay: 2">3</div>
+                  <div class="seq-item" style="--delay: 3">4</div>
+                </div>
+                <button onclick="triggerSequential()">Animate</button>
+              </div>
+
+              <div class="animation-card">
+                <h5>Elastic Containers</h5>
+                <div class="elastic-demo" id="elastic-container">
+                  <div class="elastic-item">A</div>
+                  <div class="elastic-item">B</div>
+                  <div class="elastic-item">C</div>
+                </div>
+                <button onclick="toggleElastic()">Toggle Size</button>
+              </div>
+
+              <div class="animation-card">
+                <h5>Morphing Layout</h5>
+                <div class="morph-demo" id="morph-container">
+                  <div class="morph-item">🟦</div>
+                  <div class="morph-item">🟩</div>
+                  <div class="morph-item">🟨</div>
+                  <div class="morph-item">🟪</div>
+                </div>
+                <button onclick="morphLayout()">Morph</button>
+              </div>
+            </div>
+          </div>
+
+          <h3>Flexbox with CSS Grid Integration</h3>
+          <div class="grid-flex-demo">
+            <h4>🎯 Best of Both Worlds</h4>
+
+            <div class="comparison-tabs">
+              <button
+                class="tab-button active"
+                onclick="showComparison('grid')"
+              >
+                CSS Grid
+              </button>
+              <button class="tab-button" onclick="showComparison('flex')">
+                Flexbox
+              </button>
+              <button class="tab-button" onclick="showComparison('hybrid')">
+                Hybrid Approach
+              </button>
+            </div>
+
+            <div class="comparison-content">
+              <div id="grid-demo" class="layout-demo active">
+                <div class="grid-layout">
+                  <div class="grid-item header-item">Header</div>
+                  <div class="grid-item nav-item">Navigation</div>
+                  <div class="grid-item main-item">Main Content</div>
+                  <div class="grid-item aside-item">Sidebar</div>
+                  <div class="grid-item footer-item">Footer</div>
+                </div>
+                <div class="code-snippet">
+                  <code>
+                    .grid-layout { display: grid; grid-template-areas: "header
+                    header" "nav main" "nav aside" "footer footer"; gap: 10px; }
+                  </code>
+                </div>
+              </div>
+
+              <div id="flex-demo" class="layout-demo">
+                <div class="flex-layout-complex">
+                  <div class="flex-header">Header</div>
+                  <div class="flex-body">
+                    <div class="flex-nav">Navigation</div>
+                    <div class="flex-content">
+                      <div class="flex-main">Main Content</div>
+                      <div class="flex-aside">Sidebar</div>
+                    </div>
+                  </div>
+                  <div class="flex-footer">Footer</div>
+                </div>
+                <div class="code-snippet">
+                  <code>
+                    .flex-layout { display: flex; flex-direction: column; }
+                    .flex-body { display: flex; flex: 1; } .flex-content {
+                    display: flex; flex-direction: column; flex: 1; }
+                  </code>
+                </div>
+              </div>
+
+              <div id="hybrid-demo" class="layout-demo">
+                <div class="hybrid-layout">
+                  <div class="hybrid-header">
+                    <div class="header-logo">Logo</div>
+                    <div class="header-nav">
+                      <span>Home</span>
+                      <span>About</span>
+                      <span>Contact</span>
+                    </div>
+                    <div class="header-actions">
+                      <button>Login</button>
+                      <button>Sign Up</button>
+                    </div>
+                  </div>
+                  <div class="hybrid-main">
+                    <div class="card-grid-hybrid">
+                      <div class="hybrid-card">Card 1</div>
+                      <div class="hybrid-card">Card 2</div>
+                      <div class="hybrid-card">Card 3</div>
+                      <div class="hybrid-card">Card 4</div>
+                      <div class="hybrid-card">Card 5</div>
+                      <div class="hybrid-card">Card 6</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-snippet">
+                  <code>
+                    /* Grid for overall layout */ .hybrid-layout { display:
+                    grid; grid-template-rows: auto 1fr; height: 400px; } /*
+                    Flexbox for header */ .hybrid-header { display: flex;
+                    justify-content: space-between; align-items: center; } /*
+                    Grid for card layout */ .card-grid-hybrid { display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 15px; }
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Performance Optimization</h3>
+          <div class="performance-optimization">
+            <h4>🚀 Flexbox Performance Best Practices</h4>
+
+            <div class="optimization-grid">
+              <div class="optimization-card good">
+                <h5>✅ Good Practices</h5>
+                <ul>
+                  <li>Use <code>flex-basis</code> instead of width</li>
+                  <li>Avoid deep nesting (max 3 levels)</li>
+                  <li>Use <code>gap</code> property for spacing</li>
+                  <li>Set explicit dimensions when possible</li>
+                  <li>Use <code>will-change</code> for animations</li>
+                  <li>Prefer flexbox for 1D layouts</li>
+                </ul>
+                <div class="performance-demo good-demo">
+                  <div class="perf-item good-item">Optimized</div>
+                  <div class="perf-item good-item">Layout</div>
+                  <div class="perf-item good-item">Fast</div>
+                </div>
+              </div>
+
+              <div class="optimization-card bad">
+                <h5>❌ Avoid These</h5>
+                <ul>
+                  <li>Excessive nesting (5+ levels)</li>
+                  <li>Animating flex-grow/shrink</li>
+                  <li>Using flexbox for complex 2D grids</li>
+                  <li>No explicit sizing on flex items</li>
+                  <li>Overusing justify-content changes</li>
+                  <li>Complex calc() in flex-basis</li>
+                </ul>
+                <div class="performance-demo bad-demo">
+                  <div class="perf-item bad-item">Slow</div>
+                  <div class="perf-item bad-item">Layout</div>
+                  <div class="perf-item bad-item">Laggy</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="performance-test-section">
+              <h5>⚡ Live Performance Test</h5>
+              <div class="test-controls">
+                <button onclick="runLayoutTest('optimized')">
+                  Test Optimized Layout
+                </button>
+                <button onclick="runLayoutTest('unoptimized')">
+                  Test Unoptimized Layout
+                </button>
+                <button onclick="comparePerformance()">Compare Both</button>
+              </div>
+              <div id="performance-results" class="performance-results"></div>
+            </div>
+          </div>
+
+          <h3>Accessibility with Flexbox</h3>
+          <div class="accessibility-section">
+            <h4>♿ Making Flexbox Accessible</h4>
+
+            <div class="a11y-examples">
+              <div class="a11y-card">
+                <h5>Focus Management</h5>
+                <div class="focus-demo">
+                  <button class="focus-item" tabindex="0">Tab 1</button>
+                  <button class="focus-item" tabindex="0">Tab 2</button>
+                  <button class="focus-item" tabindex="0">Tab 3</button>
+                </div>
+                <p>Use proper tab order even with flex order changes</p>
+              </div>
+
+              <div class="a11y-card">
+                <h5>Screen Reader Support</h5>
+                <div class="sr-demo">
+                  <div class="sr-item" role="article" aria-label="News article">
+                    <h6>Article Title</h6>
+                    <p>Content that's properly structured...</p>
+                  </div>
+                  <div
+                    class="sr-item"
+                    role="complementary"
+                    aria-label="Related links"
+                  >
+                    <h6>Related</h6>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                  </div>
+                </div>
+                <p>Maintain logical reading order</p>
+              </div>
+
+              <div class="a11y-card">
+                <h5>High Contrast Support</h5>
+                <div class="contrast-demo">
+                  <div class="contrast-item">High Contrast</div>
+                  <div class="contrast-item">Compatible</div>
+                  <div class="contrast-item">Design</div>
+                </div>
+                <button onclick="toggleHighContrast()">
+                  Toggle High Contrast
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <h3>Real-World Component Library</h3>
+          <div class="component-library">
+            <h4>🧱 Professional Flexbox Components</h4>
+
+            <div class="component-showcase">
+              <div class="component-demo">
+                <h5>Modal Dialog</h5>
+                <button onclick="showModal('flexbox-modal')">Show Modal</button>
+                <div id="flexbox-modal" class="modal-overlay">
+                  <div class="modal-container">
+                    <div class="modal-header">
+                      <h3>Flexbox Modal</h3>
+                      <button
+                        onclick="hideModal('flexbox-modal')"
+                        class="close-btn"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div class="modal-content">
+                      <p>
+                        This modal uses flexbox for perfect centering and
+                        flexible content sizing.
+                      </p>
+                      <div class="modal-actions">
+                        <button
+                          class="btn-cancel"
+                          onclick="hideModal('flexbox-modal')"
+                        >
+                          Cancel
+                        </button>
+                        <button class="btn-confirm">Confirm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="component-demo">
+                <h5>Toast Notifications</h5>
+                <button onclick="showToast('success')">Success Toast</button>
+                <button onclick="showToast('error')">Error Toast</button>
+                <button onclick="showToast('info')">Info Toast</button>
+              </div>
+
+              <div class="component-demo">
+                <h5>Progress Steps</h5>
+                <div class="progress-steps">
+                  <div class="step completed">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Account</div>
+                  </div>
+                  <div class="step-connector completed"></div>
+                  <div class="step completed">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Profile</div>
+                  </div>
+                  <div class="step-connector active"></div>
+                  <div class="step active">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                  </div>
+                  <div class="step-connector"></div>
+                  <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Complete</div>
+                  </div>
+                </div>
+                <div class="progress-controls">
+                  <button onclick="prevStep()">Previous</button>
+                  <button onclick="nextStep()">Next</button>
+                </div>
+              </div>
+
+              <div class="component-demo">
+                <h5>Masonry-like Layout</h5>
+                <div class="masonry-demo">
+                  <div class="masonry-item short">Short content</div>
+                  <div class="masonry-item medium">
+                    Medium length content that spans more lines and shows how
+                    flexbox can create interesting layouts
+                  </div>
+                  <div class="masonry-item tall">
+                    Very long content that demonstrates how flexbox can handle
+                    varying content sizes gracefully. This item intentionally
+                    has much more content to show the flexible nature of the
+                    layout system.
+                  </div>
+                  <div class="masonry-item short">Another short item</div>
+                  <div class="masonry-item medium">
+                    Another medium item with some content
+                  </div>
+                  <div class="masonry-item short">Short again</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="best-practices">
+        <h2>💡 Professional Best Practices</h2>
+
+        <div class="best-practices-grid">
+          <div class="practice-card">
+            <h3>🎯 When to Use Flexbox</h3>
+            <ul>
+              <li>✅ Navigation bars and menus</li>
+              <li>✅ Centering content</li>
+              <li>✅ Form layouts</li>
+              <li>✅ Media objects</li>
+              <li>✅ Button groups</li>
+              <li>✅ Card layouts</li>
+              <li>✅ Header/footer layouts</li>
+            </ul>
+          </div>
+
+          <div class="practice-card">
+            <h3>🚫 When NOT to Use Flexbox</h3>
+            <ul>
+              <li>❌ Complex 2D grid layouts (use CSS Grid)</li>
+              <li>❌ Magazine-style layouts</li>
+              <li>❌ Masonry layouts (use CSS Grid)</li>
+              <li>❌ Table-like data display</li>
+              <li>❌ Complex responsive layouts spanning both axes</li>
+            </ul>
+          </div>
+
+          <div class="practice-card">
+            <h3>⚡ Performance Tips</h3>
+            <ul>
+              <li>🚀 Avoid deep nesting</li>
+              <li>🚀 Use transform for animations</li>
+              <li>🚀 Set explicit dimensions when possible</li>
+              <li>🚀 Use will-change for animated elements</li>
+              <li>🚀 Prefer gap over margins</li>
+              <li>🚀 Test on slower devices</li>
+            </ul>
+          </div>
+
+          <div class="practice-card">
+            <h3>🛠️ Debugging Tips</h3>
+            <ul>
+              <li>🔍 Use browser dev tools flexbox inspector</li>
+              <li>🔍 Add colored borders temporarily</li>
+              <li>🔍 Check for min/max width conflicts</li>
+              <li>🔍 Verify flex-basis calculations</li>
+              <li>🔍 Test with varying content lengths</li>
+              <li>🔍 Validate HTML structure</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div id="toast-container" class="toast-container"></div>
+
+      <footer class="tutorial-footer">
+        <div class="page-navigation">
+          <button onclick="window.location.href = 'responsive-design.html'">
+            ← Responsive Design
+          </button>
+          <button onclick="window.location.href = 'cheat-sheet.html'">
+            Cheat Sheet →
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="responsive-script.js"></script>
+    <script src="advanced-script.js"></script>
+  </body>
+</html>

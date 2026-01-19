@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Flexbox Tutorial - Basic to Advanced</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="tutorial-container">
+      <header class="tutorial-header">
+        <h1>📚 Complete Flexbox Tutorial</h1>
+        <p class="subtitle">
+          From Basic to Advanced - Master Responsive Design with CSS Flexbox
+        </p>
+      </header>
+
+      <nav class="table-of-contents">
+        <h2>📋 Table of Contents</h2>
+        <ul>
+          <li><a href="#introduction">1. Introduction to Flexbox</a></li>
+          <li><a href="#basics">2. Flexbox Basics</a></li>
+          <li>
+            <a href="#container-properties">3. Flex Container Properties</a>
+          </li>
+          <li><a href="#item-properties">4. Flex Item Properties</a></li>
+          <li><a href="#common-patterns">5. Common Layout Patterns</a></li>
+          <li>
+            <a href="#responsive-design">6. Responsive Design with Flexbox</a>
+          </li>
+          <li><a href="#advanced-techniques">7. Advanced Techniques</a></li>
+          <li><a href="#real-world-examples">8. Real-World Examples</a></li>
+          <li><a href="#cheat-sheet">9. Quick Reference Cheat Sheet</a></li>
+        </ul>
+      </nav>
+
+      <section id="introduction" class="tutorial-section">
+        <h2>🚀 1. Introduction to Flexbox</h2>
+
+        <div class="content-block">
+          <h3>What is Flexbox?</h3>
+          <p>
+            CSS Flexible Box Layout, commonly known as Flexbox, is a
+            one-dimensional layout method for laying out items in rows or
+            columns. It's designed to provide an efficient way to arrange,
+            distribute, and align space among items in a container.
+          </p>
+
+          <h3>Why Use Flexbox?</h3>
+          <ul>
+            <li>✅ Easy alignment of items</li>
+            <li>✅ Dynamic sizing and distribution</li>
+            <li>✅ Perfect for responsive design</li>
+            <li>✅ Solves common CSS layout problems</li>
+            <li>✅ Works with any element size</li>
+          </ul>
+
+          <div class="comparison">
+            <h3>Before Flexbox vs. With Flexbox</h3>
+            <div class="comparison-grid">
+              <div class="before">
+                <h4>❌ Before (Float/Position)</h4>
+                <div class="old-layout">
+                  <div class="float-item">Item 1</div>
+                  <div class="float-item">Item 2</div>
+                  <div class="float-item">Item 3</div>
+                  <div style="clear: both"></div>
+                </div>
+                <p>Complex, brittle, hard to maintain</p>
+              </div>
+              <div class="after">
+                <h4>✅ With Flexbox</h4>
+                <div class="flex-layout">
+                  <div class="flex-item">Item 1</div>
+                  <div class="flex-item">Item 2</div>
+                  <div class="flex-item">Item 3</div>
+                </div>
+                <p>Simple, flexible, responsive</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="basics" class="tutorial-section">
+        <h2>🎯 2. Flexbox Basics</h2>
+
+        <div class="content-block">
+          <h3>Flex Container and Flex Items</h3>
+          <p>Flexbox is based on two main components:</p>
+
+          <div class="concept-explanation">
+            <div class="concept">
+              <h4>Flex Container (Parent)</h4>
+              <div class="demo-container" id="basic-container">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+              </div>
+              <code class="css-code">
+                .container { display: flex; /* This makes it a flex container */
+                }
+              </code>
+            </div>
+          </div>
+
+          <h3>Main Axis vs Cross Axis</h3>
+          <div class="axis-explanation">
+            <div class="axis-demo">
+              <div class="axis-container">
+                <span class="main-axis-label">Main Axis →</span>
+                <div class="axis-item">1</div>
+                <div class="axis-item">2</div>
+                <div class="axis-item">3</div>
+                <span class="cross-axis-label">↕ Cross Axis</span>
+              </div>
+              <p>
+                <strong>Main Axis:</strong> Primary axis along which flex items
+                are laid out
+              </p>
+              <p><strong>Cross Axis:</strong> Perpendicular to the main axis</p>
+            </div>
+          </div>
+
+          <div class="interactive-demo">
+            <h3>🎮 Try It Yourself: Basic Flexbox</h3>
+            <div class="controls">
+              <button onclick="toggleBasicFlex()">Toggle Flexbox On/Off</button>
+            </div>
+            <div class="demo-area" id="basic-demo">
+              <div class="demo-item">A</div>
+              <div class="demo-item">B</div>
+              <div class="demo-item">C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="container-properties" class="tutorial-section">
+        <h2>📦 3. Flex Container Properties</h2>
+
+        <div class="content-block">
+          <h3>1. flex-direction</h3>
+          <p>Defines the main axis and direction of flex items.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Direction:</label>
+              <select onchange="changeDirection(this.value)">
+                <option value="row">row (default)</option>
+                <option value="row-reverse">row-reverse</option>
+                <option value="column">column</option>
+                <option value="column-reverse">column-reverse</option>
+              </select>
+            </div>
+            <div class="demo-container" id="direction-demo">
+              <div class="demo-item">1</div>
+              <div class="demo-item">2</div>
+              <div class="demo-item">3</div>
+            </div>
+            <code class="current-css" id="direction-css"
+              >flex-direction: row;</code
+            >
+          </div>
+
+          <h3>2. justify-content</h3>
+          <p>Aligns items along the main axis.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Justify Content:</label>
+              <select onchange="changeJustifyContent(this.value)">
+                <option value="flex-start">flex-start (default)</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
+            </div>
+            <div class="demo-container justify-demo" id="justify-demo">
+              <div class="demo-item">A</div>
+              <div class="demo-item">B</div>
+              <div class="demo-item">C</div>
+            </div>
+            <code class="current-css" id="justify-css"
+              >justify-content: flex-start;</code
+            >
+          </div>
+
+          <h3>3. align-items</h3>
+          <p>Aligns items along the cross axis.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Align Items:</label>
+              <select onchange="changeAlignItems(this.value)">
+                <option value="stretch">stretch (default)</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="baseline">baseline</option>
+              </select>
+            </div>
+            <div class="demo-container align-demo" id="align-demo">
+              <div class="demo-item">A</div>
+              <div class="demo-item tall-item">B<br />Tall</div>
+              <div class="demo-item">C</div>
+            </div>
+            <code class="current-css" id="align-css"
+              >align-items: stretch;</code
+            >
+          </div>
+
+          <h3>4. flex-wrap</h3>
+          <p>Controls whether items wrap to new lines.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Flex Wrap:</label>
+              <select onchange="changeFlexWrap(this.value)">
+                <option value="nowrap">nowrap (default)</option>
+                <option value="wrap">wrap</option>
+                <option value="wrap-reverse">wrap-reverse</option>
+              </select>
+            </div>
+            <div class="demo-container wrap-demo" id="wrap-demo">
+              <div class="demo-item wide-item">Item 1</div>
+              <div class="demo-item wide-item">Item 2</div>
+              <div class="demo-item wide-item">Item 3</div>
+              <div class="demo-item wide-item">Item 4</div>
+              <div class="demo-item wide-item">Item 5</div>
+            </div>
+            <code class="current-css" id="wrap-css">flex-wrap: nowrap;</code>
+          </div>
+
+          <h3>5. gap (Modern Property)</h3>
+          <p>Creates space between items without using margins.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Gap Size:</label>
+              <input
+                type="range"
+                min="0"
+                max="30"
+                value="0"
+                onchange="changeGap(this.value)"
+              />
+              <span id="gap-value">0px</span>
+            </div>
+            <div class="demo-container" id="gap-demo">
+              <div class="demo-item">1</div>
+              <div class="demo-item">2</div>
+              <div class="demo-item">3</div>
+              <div class="demo-item">4</div>
+            </div>
+            <code class="current-css" id="gap-css">gap: 0px;</code>
+          </div>
+        </div>
+      </section>
+
+      <section id="item-properties" class="tutorial-section">
+        <h2>🎲 4. Flex Item Properties</h2>
+
+        <div class="content-block">
+          <h3>1. flex-grow</h3>
+          <p>Defines how much an item should grow relative to other items.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Item 1 flex-grow:</label>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                value="0"
+                onchange="changeFlexGrow(1, this.value)"
+              />
+              <span id="grow1-value">0</span>
+
+              <label>Item 2 flex-grow:</label>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                value="1"
+                onchange="changeFlexGrow(2, this.value)"
+              />
+              <span id="grow2-value">1</span>
+
+              <label>Item 3 flex-grow:</label>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                value="0"
+                onchange="changeFlexGrow(3, this.value)"
+              />
+              <span id="grow3-value">0</span>
+            </div>
+            <div class="demo-container" id="grow-demo">
+              <div class="demo-item" id="grow-item-1">
+                Item 1<br /><span class="grow-info">grow: 0</span>
+              </div>
+              <div class="demo-item" id="grow-item-2">
+                Item 2<br /><span class="grow-info">grow: 1</span>
+              </div>
+              <div class="demo-item" id="grow-item-3">
+                Item 3<br /><span class="grow-info">grow: 0</span>
+              </div>
+            </div>
+          </div>
+
+          <h3>2. flex-shrink</h3>
+          <p>Defines how much an item should shrink when space is limited.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Container width:</label>
+              <input
+                type="range"
+                min="200"
+                max="600"
+                value="600"
+                onchange="changeShrinkContainer(this.value)"
+              />
+              <span id="shrink-width">600px</span>
+            </div>
+            <div class="demo-container shrink-container" id="shrink-demo">
+              <div class="demo-item shrink-item">
+                flex-shrink: 1<br />(normal)
+              </div>
+              <div class="demo-item no-shrink">
+                flex-shrink: 0<br />(no shrink)
+              </div>
+              <div class="demo-item shrink-item">
+                flex-shrink: 1<br />(normal)
+              </div>
+            </div>
+          </div>
+
+          <h3>3. flex-basis</h3>
+          <p>
+            Sets the initial size of an item before free space is distributed.
+          </p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Item 2 flex-basis:</label>
+              <select onchange="changeFlexBasis(this.value)">
+                <option value="auto">auto (default)</option>
+                <option value="100px">100px</option>
+                <option value="200px">200px</option>
+                <option value="50%">50%</option>
+                <option value="0">0</option>
+              </select>
+            </div>
+            <div class="demo-container" id="basis-demo">
+              <div class="demo-item basis-item">Item 1<br />auto</div>
+              <div class="demo-item basis-item" id="basis-target">
+                Item 2<br />auto
+              </div>
+              <div class="demo-item basis-item">Item 3<br />auto</div>
+            </div>
+            <code class="current-css" id="basis-css">flex-basis: auto;</code>
+          </div>
+
+          <h3>4. align-self</h3>
+          <p>Overrides the align-items value for individual items.</p>
+
+          <div class="property-demo">
+            <div class="controls">
+              <label>Middle item align-self:</label>
+              <select onchange="changeAlignSelf(this.value)">
+                <option value="auto">auto (default)</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="stretch">stretch</option>
+                <option value="baseline">baseline</option>
+              </select>
+            </div>
+            <div class="demo-container align-self-demo" id="align-self-demo">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item" id="align-self-target">
+                Item 2<br />(align-self)
+              </div>
+              <div class="demo-item">Item 3</div>
+            </div>
+            <code class="current-css" id="align-self-css"
+              >align-self: auto;</code
+            >
+          </div>
+
+          <h3>The flex Shorthand</h3>
+          <div class="info-box">
+            <h4>💡 Pro Tip: flex shorthand</h4>
+            <p>
+              <code>flex</code> is a shorthand for <code>flex-grow</code>,
+              <code>flex-shrink</code>, and <code>flex-basis</code>
+            </p>
+            <ul>
+              <li><code>flex: 1</code> = <code>flex: 1 1 0</code></li>
+              <li><code>flex: auto</code> = <code>flex: 1 1 auto</code></li>
+              <li><code>flex: none</code> = <code>flex: 0 0 auto</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="common-patterns" class="tutorial-section">
+        <h2>🎨 5. Common Layout Patterns</h2>
+
+        <div class="content-block">
+          <h3>Pattern 1: Centering Content</h3>
+          <div class="pattern-demo">
+            <h4>Perfect Centering (Holy Grail of CSS!)</h4>
+            <div class="centering-demo">
+              <div class="centered-content">Perfectly Centered!</div>
+            </div>
+            <code class="css-code">
+              .container { display: flex; justify-content: center; align-items:
+              center; height: 200px; }
+            </code>
+          </div>
+
+          <h3>Pattern 2: Navigation Bar</h3>
+          <div class="pattern-demo">
+            <div class="navbar-demo">
+              <div class="nav-item">Logo</div>
+              <div class="nav-spacer"></div>
+              <div class="nav-item">Home</div>
+              <div class="nav-item">About</div>
+              <div class="nav-item">Contact</div>
+            </div>
+            <code class="css-code">
+              .navbar { display: flex; align-items: center; } .nav-spacer {
+              flex-grow: 1; /* Takes up remaining space */ }
+            </code>
+          </div>
+
+          <h3>Pattern 3: Card Layout</h3>
+          <div class="pattern-demo">
+            <div class="card-layout">
+              <div class="card">
+                <h4>Card 1</h4>
+                <p>Some content here that might be different lengths.</p>
+                <button class="card-button">Read More</button>
+              </div>
+              <div class="card">
+                <h4>Card 2</h4>
+                <p>
+                  This card has much more content to demonstrate how flexbox can
+                  handle varying content heights beautifully.
+                </p>
+                <button class="card-button">Read More</button>
+              </div>
+              <div class="card">
+                <h4>Card 3</h4>
+                <p>Short content.</p>
+                <button class="card-button">Read More</button>
+              </div>
+            </div>
+            <code class="css-code">
+              .card-layout { display: flex; gap: 20px; } .card { flex: 1; /*
+              Equal width */ display: flex; flex-direction: column; }
+              .card-button { margin-top: auto; /* Push to bottom */ }
+            </code>
+          </div>
+
+          <h3>Pattern 4: Sidebar Layout</h3>
+          <div class="pattern-demo">
+            <div class="sidebar-layout">
+              <aside class="sidebar">Sidebar</aside>
+              <main class="main-content">Main Content Area</main>
+            </div>
+            <code class="css-code">
+              .sidebar-layout { display: flex; height: 300px; } .sidebar {
+              flex-basis: 200px; flex-shrink: 0; } .main-content { flex-grow: 1;
+              }
+            </code>
+          </div>
+        </div>
+      </section>
+
+      <footer class="tutorial-footer">
+        <p>
+          Continue to the next sections for responsive design and advanced
+          techniques!
+        </p>
+        <div class="page-navigation">
+          <button onclick="window.location.href = 'responsive-design.html'">
+            Next: Responsive Design →
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

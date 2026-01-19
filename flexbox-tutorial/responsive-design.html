@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design with Flexbox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive-styles.css" />
+  </head>
+  <body>
+    <div class="tutorial-container">
+      <header class="tutorial-header">
+        <h1>📱 Responsive Design with Flexbox</h1>
+        <p class="subtitle">Master Mobile-First Design and Adaptive Layouts</p>
+      </header>
+
+      <nav class="page-nav">
+        <a href="index.html">← Back to Basics</a>
+        <a href="advanced.html">Advanced Techniques →</a>
+      </nav>
+
+      <section id="responsive-design" class="tutorial-section">
+        <h2>🌊 6. Responsive Design with Flexbox</h2>
+
+        <div class="content-block">
+          <h3>Mobile-First Approach</h3>
+          <p>
+            Start with mobile design and enhance for larger screens using media
+            queries.
+          </p>
+
+          <div class="responsive-demo-container">
+            <h4>🎮 Interactive Responsive Demo</h4>
+            <div class="controls">
+              <label>Screen Width:</label>
+              <input
+                type="range"
+                min="320"
+                max="1200"
+                value="1200"
+                onchange="changeResponsiveBreakpoint(this.value)"
+              />
+              <span id="breakpoint-value">1200px</span>
+            </div>
+            <div class="responsive-viewport">
+              <div
+                class="demo-container responsive-container"
+                id="responsive-demo"
+              >
+                <div class="demo-item responsive-item">Navigation</div>
+                <div class="demo-item responsive-item">Main Content</div>
+                <div class="demo-item responsive-item">Sidebar</div>
+              </div>
+            </div>
+            <code class="current-css" id="responsive-css"
+              >flex-direction: row; (Desktop Layout)</code
+            >
+          </div>
+
+          <h3>Breakpoint Strategy</h3>
+          <div class="breakpoint-guide">
+            <div class="breakpoint-item">
+              <h4>📱 Mobile (320px - 767px)</h4>
+              <div class="breakpoint-demo mobile">
+                <div class="nav-mobile">Nav</div>
+                <div class="content-mobile">Content</div>
+                <div class="sidebar-mobile">Sidebar</div>
+              </div>
+              <code class="css-code">
+                /* Mobile First */ .container { display: flex; flex-direction:
+                column; }
+              </code>
+            </div>
+
+            <div class="breakpoint-item">
+              <h4>📊 Tablet (768px - 1023px)</h4>
+              <div class="breakpoint-demo tablet">
+                <div class="nav-tablet">Navigation</div>
+                <div class="content-tablet">Main Content</div>
+                <div class="sidebar-tablet">Sidebar</div>
+              </div>
+              <code class="css-code">
+                @media (min-width: 768px) { .container { flex-direction: row; }
+                .sidebar { flex-basis: 250px; } }
+              </code>
+            </div>
+
+            <div class="breakpoint-item">
+              <h4>🖥️ Desktop (1024px+)</h4>
+              <div class="breakpoint-demo desktop">
+                <div class="nav-desktop">Navigation</div>
+                <div class="content-desktop">Main Content Area</div>
+                <div class="sidebar-desktop">Sidebar</div>
+              </div>
+              <code class="css-code">
+                @media (min-width: 1024px) { .main-content { flex: 2; } .sidebar
+                { flex: 1; max-width: 300px; } }
+              </code>
+            </div>
+          </div>
+
+          <h3>Responsive Flexbox Patterns</h3>
+
+          <div class="pattern-showcase">
+            <div class="pattern-card">
+              <h4>Pattern 1: Responsive Navigation</h4>
+              <div class="nav-pattern">
+                <div class="responsive-nav">
+                  <div class="logo">Logo</div>
+                  <div class="nav-links">
+                    <span>Home</span>
+                    <span>About</span>
+                    <span>Services</span>
+                    <span>Contact</span>
+                  </div>
+                  <div class="hamburger">☰</div>
+                </div>
+              </div>
+              <code class="css-code">
+                .nav { display: flex; justify-content: space-between;
+                align-items: center; } .nav-links { display: flex; gap: 20px; }
+                .hamburger { display: none; } @media (max-width: 768px) {
+                .nav-links { display: none; } .hamburger { display: block; } }
+              </code>
+            </div>
+
+            <div class="pattern-card">
+              <h4>Pattern 2: Responsive Card Grid</h4>
+              <div class="card-grid">
+                <div class="responsive-card">Card 1</div>
+                <div class="responsive-card">Card 2</div>
+                <div class="responsive-card">Card 3</div>
+                <div class="responsive-card">Card 4</div>
+                <div class="responsive-card">Card 5</div>
+                <div class="responsive-card">Card 6</div>
+              </div>
+              <code class="css-code">
+                .card-grid { display: flex; flex-wrap: wrap; gap: 20px; } .card
+                { flex: 1 1 300px; /* grow shrink basis */ min-width: 0; /*
+                prevents overflow */ } @media (max-width: 768px) { .card { flex:
+                1 1 100%; } }
+              </code>
+            </div>
+
+            <div class="pattern-card">
+              <h4>Pattern 3: Responsive Form</h4>
+              <div class="form-pattern">
+                <form class="responsive-form">
+                  <div class="form-row">
+                    <input type="text" placeholder="First Name" />
+                    <input type="text" placeholder="Last Name" />
+                  </div>
+                  <div class="form-row">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      class="full-width"
+                    />
+                  </div>
+                  <div class="form-row">
+                    <textarea
+                      placeholder="Message"
+                      class="full-width"
+                    ></textarea>
+                  </div>
+                  <button type="submit">Send Message</button>
+                </form>
+              </div>
+              <code class="css-code">
+                .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+                .form-row input { flex: 1; } .full-width { flex: 1 1 100%; }
+                @media (max-width: 600px) { .form-row { flex-direction: column;
+                } }
+              </code>
+            </div>
+          </div>
+
+          <h3>Flexible Media Queries</h3>
+          <div class="media-query-demo">
+            <h4>Container Queries Alternative with Flexbox</h4>
+            <div class="controls">
+              <label>Container Size:</label>
+              <input
+                type="range"
+                min="250"
+                max="800"
+                value="500"
+                onchange="changeContainerSize(this.value)"
+              />
+              <span id="container-size">500px</span>
+            </div>
+            <div class="flex-container-demo" id="container-demo">
+              <div class="flexible-item">Item 1</div>
+              <div class="flexible-item">Item 2</div>
+              <div class="flexible-item">Item 3</div>
+            </div>
+            <div class="query-explanation">
+              <p>
+                🔍 <strong>Current Behavior:</strong>
+                <span id="behavior-description"
+                  >Items arranged horizontally</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <h3>Advanced Responsive Techniques</h3>
+
+          <div class="advanced-techniques">
+            <div class="technique-card">
+              <h4>1. Flexible Typography</h4>
+              <div class="typo-demo">
+                <h1 class="responsive-heading">Responsive Heading</h1>
+                <p class="responsive-text">
+                  This text scales beautifully across all screen sizes using CSS
+                  clamp() and flexbox spacing.
+                </p>
+              </div>
+              <code class="css-code">
+                .responsive-heading { font-size: clamp(1.5rem, 4vw, 3rem); }
+                .responsive-text { font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                line-height: 1.6; }
+              </code>
+            </div>
+
+            <div class="technique-card">
+              <h4>2. Aspect Ratio Maintenance</h4>
+              <div class="aspect-demo">
+                <div class="aspect-item">16:9 Video</div>
+                <div class="aspect-item square">1:1 Image</div>
+                <div class="aspect-item portrait">3:4 Portrait</div>
+              </div>
+              <code class="css-code">
+                .aspect-item { flex: 1; aspect-ratio: 16/9; display: flex;
+                align-items: center; justify-content: center; } .square {
+                aspect-ratio: 1/1; } .portrait { aspect-ratio: 3/4; }
+              </code>
+            </div>
+
+            <div class="technique-card">
+              <h4>3. Dynamic Ordering</h4>
+              <div class="ordering-demo">
+                <div class="order-item header">Header (order: 1)</div>
+                <div class="order-item sidebar">
+                  Sidebar (order: 3 on mobile)
+                </div>
+                <div class="order-item content">Content (order: 2)</div>
+              </div>
+              <div class="controls">
+                <button onclick="toggleMobileOrder()">
+                  Toggle Mobile Order
+                </button>
+              </div>
+              <code class="css-code">
+                @media (max-width: 768px) { .container { flex-direction: column;
+                } .header { order: 1; } .content { order: 2; } .sidebar { order:
+                3; } }
+              </code>
+            </div>
+          </div>
+
+          <h3>Performance Considerations</h3>
+          <div class="performance-section">
+            <h4>🚀 Flexbox vs Other Layout Methods</h4>
+            <div class="performance-comparison">
+              <div class="comparison-chart">
+                <div class="chart-item">
+                  <span class="method">Flexbox</span>
+                  <div class="bar flexbox-bar">Fast & Efficient</div>
+                  <span class="score">9/10</span>
+                </div>
+                <div class="chart-item">
+                  <span class="method">CSS Grid</span>
+                  <div class="bar grid-bar">Very Fast</div>
+                  <span class="score">10/10</span>
+                </div>
+                <div class="chart-item">
+                  <span class="method">Float</span>
+                  <div class="bar float-bar">Slower</div>
+                  <span class="score">6/10</span>
+                </div>
+                <div class="chart-item">
+                  <span class="method">Table</span>
+                  <div class="bar table-bar">Slowest</div>
+                  <span class="score">4/10</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="performance-tips">
+              <h4>💡 Optimization Tips</h4>
+              <ul>
+                <li>
+                  ✅ Use <code>flex-basis</code> instead of width when possible
+                </li>
+                <li>✅ Minimize nested flex containers</li>
+                <li>✅ Use <code>gap</code> instead of margins for spacing</li>
+                <li>✅ Avoid animating flex-grow/shrink properties</li>
+                <li>✅ Use <code>will-change</code> for smooth animations</li>
+                <li>✅ Consider CSS Grid for complex 2D layouts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiz-section">
+        <h2>🧠 Test Your Knowledge</h2>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <h3>
+              Question 1: Which property creates space between flex items?
+            </h3>
+            <div class="quiz-options">
+              <label
+                ><input type="radio" name="q1" value="margin" /> margin</label
+              >
+              <label><input type="radio" name="q1" value="gap" /> gap</label>
+              <label
+                ><input type="radio" name="q1" value="padding" /> padding</label
+              >
+              <label
+                ><input type="radio" name="q1" value="space" /> space</label
+              >
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <h3>Question 2: What's the best approach for responsive design?</h3>
+            <div class="quiz-options">
+              <label
+                ><input type="radio" name="q2" value="desktop-first" />
+                Desktop-first</label
+              >
+              <label
+                ><input type="radio" name="q2" value="mobile-first" />
+                Mobile-first</label
+              >
+              <label
+                ><input type="radio" name="q2" value="tablet-first" />
+                Tablet-first</label
+              >
+              <label
+                ><input type="radio" name="q2" value="no-preference" /> No
+                preference</label
+              >
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <h3>Question 3: Which flexbox property allows items to wrap?</h3>
+            <div class="quiz-options">
+              <label
+                ><input type="radio" name="q3" value="flex-direction" />
+                flex-direction</label
+              >
+              <label
+                ><input type="radio" name="q3" value="flex-wrap" />
+                flex-wrap</label
+              >
+              <label
+                ><input type="radio" name="q3" value="justify-content" />
+                justify-content</label
+              >
+              <label
+                ><input type="radio" name="q3" value="align-items" />
+                align-items</label
+              >
+            </div>
+          </div>
+
+          <button onclick="checkAnswers()" class="quiz-button">
+            Check Answers
+          </button>
+          <div id="quiz-results"></div>
+        </div>
+      </section>
+
+      <footer class="tutorial-footer">
+        <div class="page-navigation">
+          <button onclick="window.location.href = 'index.html'">
+            ← Back to Basics
+          </button>
+          <button onclick="window.location.href = 'advanced.html'">
+            Advanced Techniques →
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="responsive-script.js"></script>
+  </body>
+</html>

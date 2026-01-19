@@ -4,6 +4,7 @@ import Nav1 from "@/components/Nav1";
 import Navbar from "@/components/Navbar";
 import NewArrival from "@/components/NewArrival";
 import TopSelling from "@/components/top-selling";
+import BrowseByDressStyle from "@/components/ui/browse-by-dress-style";
 import { Separator } from "@/components/ui/separator";
 
 export default function page() {
@@ -13,11 +14,10 @@ export default function page() {
       <Navbar />
       <HeroSection />
       <Brands />
-      <NewArrival />
-      <div className="px-20">
-        <Separator className="my-[64px]   " />
-      </div>
+      {/* <NewArrival />
+
       <TopSelling />
+      <BrowseByDressStyle /> */}
     </div>
   );
 }

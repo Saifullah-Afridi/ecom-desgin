@@ -1,8 +1,7 @@
 export default function Brands() {
   return (
-    <div className="w-full bg-black py-10">
-      {/* <div className="px-2 md:px-8 lg:px-20 bg-black grid grid-cols-6 gap-10  place-content-center place-items-center justify-between items-center"> */}
-      <div className="px-2 md:px-8 lg:px-20 flex flex-wrap gap-3 lg:gap-10 items-center justify-center  ">
+    <div className="w-full bg-black py-10 px-2 md:px-8 lg:px-20">
+      <div className=" flex flex-wrap gap-3 lg:gap-10 items-center justify-center  ">
         <div className="w-[116px] lg:w-[166px]">
           <svg
             viewBox="0 0 167 34"

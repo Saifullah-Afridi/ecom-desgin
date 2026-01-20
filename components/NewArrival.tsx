@@ -4,20 +4,20 @@ import ProductCard from "./ui/product-card";
 
 export default function NewArrival() {
   return (
-    <div className="px-20 my-12">
-      <div className="md:my-16 ">
-        <h2 className="text-center text-[32px]  md:text-[48px] mb-[55px]">
-          New Arrival
-        </h2>
-        <ProductList />
-        <div className="text-center mt-9">
-          <Button
-            className="md:w-36 w-full md:h-14  px-20  font-medium  rounded-full border-[#000000] "
-            variant="outline"
-          >
-            View All
-          </Button>
-        </div>
+    <div className="px-2 md:px-8 lg:px-20 py-14">
+      <h2 className=" font-bold text-3xl md:text-4xl lg:text-5xl lg:mb-16 font-bold text-center mb-8 ">
+        New Arrival
+      </h2>
+
+      <ProductList />
+
+      <div className="flex justify-center mt-8">
+        <Button
+          className="h-15 w-46 cursor-pointer rounded-full"
+          variant="outline"
+        >
+          View All
+        </Button>
       </div>
     </div>
   );

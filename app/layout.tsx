@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import FooterSection from "@/components/homepage/footer-section";
+import NavbarSection from "@/components/homepage/navbar-section";
+import NewsletterSection from "@/components/homepage/newsletter-section";
 
 export const metadata: Metadata = {
   title: "SHOP.CO - Find Clothes That Matches Your Style",
@@ -16,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Navbar />
+        <NavbarSection />
         {children}
+        <NewsletterSection />
+        <FooterSection />
       </body>
     </html>
   );

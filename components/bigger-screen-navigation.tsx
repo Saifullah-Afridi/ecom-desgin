@@ -4,7 +4,7 @@ import React from "react";
 
 export default function BiggerScreenNavigation() {
   return (
-    <div className=" px-2 md:px-8 lg:px-20 hidden lg:block py-5">
+    <div className="w-full mx-auto max-w-7xl px-2 md:px-8 lg:px-20 hidden lg:block py-5">
       <div className="flex items-center gap-8 ">
         <div>
           <svg

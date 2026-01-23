@@ -37,6 +37,55 @@ export default function FilterCategoryList() {
       <Separator className="my-6" />
       <div className="flex flex-col gap-5">
         <h3 className="flex items-center justify-between text-satoshi text-xl font-bold text-black leading-[100%] tracking-wide ">
+          Colors <ChevronUp />
+        </h3>
+        <div className="grid grid-cols-5 gap-4">
+          <Button
+            className="rounded-full h-10 w-10  bg-green-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-red-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-yellow-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10  bg-orange-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-cyan-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-blue-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-purple-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-pink-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-white-500 "
+            variant="ghost"
+          ></Button>
+          <Button
+            className="rounded-full h-10 w-10 bg-black-500 "
+            variant="ghost"
+          ></Button>
+        </div>
+      </div>
+      <Separator className="my-6" />
+
+      <div className="flex flex-col gap-5">
+        <h3 className="flex items-center justify-between text-satoshi text-xl font-bold text-black leading-[100%] tracking-wide ">
           Sizes <ChevronUp />
         </h3>
         <div className="grid grid-cols-3 gap-4">

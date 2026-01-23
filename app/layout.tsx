@@ -3,6 +3,7 @@ import "./globals.css";
 import FooterSection from "@/components/homepage/footer-section";
 import NavbarSection from "@/components/homepage/navbar-section";
 import NewsletterSection from "@/components/homepage/newsletter-section";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "SHOP.CO - Find Clothes That Matches Your Style",

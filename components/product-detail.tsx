@@ -5,39 +5,39 @@ export default function ProductDetail() {
   return (
     <div className="flex flex-col md:flex-row gap-6 mb-10">
       <div className="md:flex-row md:flex-1   flex  flex-col  gap-3">
-        <div className="md:flex-[3]  md:order-2   border-2 ">
+        <div className="md:flex-[3]  md:order-2  ">
           <img
             src="/images/single-product-image.jpg"
             alt="Product Image"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full rounded-xl"
           />
         </div>
         <div className="md:flex-1 flex md:order-1 md:flex-col gap-2">
-          <div className="aspect-square md:flex-1 border-2 ">
+          <div className="aspect-square md:flex-1 ">
             <img
               src="/images/single-product-image.jpg"
               alt="Product Image"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-xl"
             />
           </div>
           <div className="aspect-square md:flex-1 ">
             <img
               src="/images/single-product-image.jpg"
               alt="Product Image"
-              className="object-cover w-full h-full "
+              className="object-cover w-full h-full rounded-xl "
             />
           </div>
           <div className="aspect-square md:flex-1">
             <img
               src="/images/single-product-image.jpg"
               alt="Product Image"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-xl"
             />
           </div>
         </div>
       </div>
       <div className="w-full md:flex-1 flex flex-col gap-4">
-        <h1 className="font-bold text-2xl lg:text-4xl ">
+        <h1 className="font-bold text-2xl lg:text-5xl leading-[100%] text-satoshi ">
           One Life Graphic T-shirt
         </h1>
         <div className="flex items-center gap-1">
@@ -61,7 +61,7 @@ export default function ProductDetail() {
             $300
           </span>
         </div>
-        <p className="text-sm md:text-base opacity-60 leading-5 lg:leading-6">
+        <p className="text-sm md:text-lg opacity-60 leading-5 lg:leading-6">
           This graphic t-shirt which is perfect for any occasion. Crafted from a
           soft and breathable fabric, it offers superior comfort and style.
         </p>

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function CategoryProductCard() {
   return (
     <div className="flex flex-col gap-2 p-3">
-      <div className="w-full h-[150px]  md:h-[300px] relative bg-gray-100 rounded-lg">
+      <div className="w-full h-[150px]  md:h-[300px] relative bg-gray-100 rounded-md ">
         <Image
           src="/images/small2.jpg"
           fill

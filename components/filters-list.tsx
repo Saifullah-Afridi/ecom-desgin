@@ -15,7 +15,7 @@ export default function FilterCategoryList() {
         </Button>
       </div>
       <Separator className="my-6" />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         <span className="flex items-center justify-between text-muted-foreground">
           T-Shirts <ChevronRight />
         </span>
@@ -34,8 +34,8 @@ export default function FilterCategoryList() {
           Jeans <ChevronRight />
         </span>
       </div>
-      <Separator className="my-6" />
-      <div className="flex flex-col gap-5">
+      <Separator className="my-4" />
+      <div className="flex flex-col gap-3">
         <h3 className="flex items-center justify-between text-satoshi text-xl font-bold text-black leading-[100%] tracking-wide ">
           Colors <ChevronUp />
         </h3>
@@ -84,7 +84,7 @@ export default function FilterCategoryList() {
       </div>
       <Separator className="my-6" />
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         <h3 className="flex items-center justify-between text-satoshi text-xl font-bold text-black leading-[100%] tracking-wide ">
           Sizes <ChevronUp />
         </h3>
@@ -151,12 +151,12 @@ export default function FilterCategoryList() {
           </Button>
         </div>
       </div>
-      <Separator className="my-6" />
-      <div className="flex flex-col gap-5">
+      <Separator className="my-4" />
+      <div className="flex flex-col gap-3">
         <h3 className="flex items-center justify-between text-satoshi text-xl font-bold text-black leading-[100%] tracking-wide ">
           Casual <ChevronUp />
         </h3>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           <span className="flex items-center justify-between text-muted-foreground">
             Formal <ChevronRight />
           </span>
@@ -177,7 +177,7 @@ export default function FilterCategoryList() {
           </span>
         </div>
       </div>
-      <Button className="w-full  leading-[100%] font-medium p-6 rounded-full my-10 ">
+      <Button className="w-full  leading-[100%] font-medium p-6 rounded-full my-6 ">
         Apply Filter
       </Button>
     </div>

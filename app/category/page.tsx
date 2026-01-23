@@ -1,8 +1,18 @@
 import CategoryProductCard from "@/components/category-product-card";
 import FilterCategoryList from "@/components/filters-list";
-import ProductCard from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { SlidersVertical } from "lucide-react";
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import { Separator } from "@/components/ui/separator";
 
 export default function CategoryPage() {
   return (
@@ -24,13 +34,60 @@ export default function CategoryPage() {
             </Button>
           </div>
 
-          <div className="grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 grid">
-            <CategoryProductCard />
-            <CategoryProductCard />
-            <CategoryProductCard />
-            <CategoryProductCard />
-            <CategoryProductCard />
-            <CategoryProductCard />
+          <div className="">
+            <div className="grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 grid">
+              <CategoryProductCard />
+              <CategoryProductCard />
+              <CategoryProductCard />
+              <CategoryProductCard />
+              <CategoryProductCard />
+              <CategoryProductCard />
+            </div>
+            <Separator className="my-2" />
+            <Pagination className="w-full">
+              <PaginationContent className="w-full flex justify-between gap-5 py-2">
+                {/* Previous */}
+                <div>
+                  <PaginationItem>
+                    <PaginationPrevious asChild>
+                      <button>Previous</button>
+                    </PaginationPrevious>
+                  </PaginationItem>
+                </div>
+
+                {/* Page numbers */}
+                <div className="flex items-center gap-2">
+                  <PaginationItem>
+                    <PaginationLink asChild>
+                      <button>1</button>
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink asChild isActive>
+                      <button>2</button>
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationLink asChild>
+                      <button>3</button>
+                    </PaginationLink>
+                  </PaginationItem>
+
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                </div>
+
+                {/* Next */}
+                <PaginationItem>
+                  <PaginationNext asChild>
+                    <button>Next</button>
+                  </PaginationNext>
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
           </div>
         </div>
       </div>

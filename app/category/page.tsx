@@ -3,16 +3,8 @@ import FilterCategoryList from "@/components/filters-list";
 import { Button } from "@/components/ui/button";
 import { SlidersVertical } from "lucide-react";
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import { Separator } from "@/components/ui/separator";
+import CustomPagination from "@/components/pagination";
 
 export default function CategoryPage() {
   return (
@@ -44,50 +36,7 @@ export default function CategoryPage() {
               <CategoryProductCard />
             </div>
             <Separator className="my-2" />
-            <Pagination className="w-full">
-              <PaginationContent className="w-full flex justify-between gap-5 py-2">
-                {/* Previous */}
-                <div>
-                  <PaginationItem>
-                    <PaginationPrevious asChild>
-                      <button>Previous</button>
-                    </PaginationPrevious>
-                  </PaginationItem>
-                </div>
-
-                {/* Page numbers */}
-                <div className="flex items-center gap-2">
-                  <PaginationItem>
-                    <PaginationLink asChild>
-                      <button>1</button>
-                    </PaginationLink>
-                  </PaginationItem>
-
-                  <PaginationItem>
-                    <PaginationLink asChild isActive>
-                      <button>2</button>
-                    </PaginationLink>
-                  </PaginationItem>
-
-                  <PaginationItem>
-                    <PaginationLink asChild>
-                      <button>3</button>
-                    </PaginationLink>
-                  </PaginationItem>
-
-                  <PaginationItem>
-                    <PaginationEllipsis />
-                  </PaginationItem>
-                </div>
-
-                {/* Next */}
-                <PaginationItem>
-                  <PaginationNext asChild>
-                    <button>Next</button>
-                  </PaginationNext>
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <CustomPagination />
           </div>
         </div>
       </div>

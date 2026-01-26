@@ -47,19 +47,19 @@ export default function NavbarSection() {
                 Shop
               </button>
               <a
-                href="#"
+                href="/#on-sale"
                 className="text-satoshi text-[16px] text-black hover:opacity-70"
               >
                 On Sale
               </a>
               <a
-                href="#"
+                href="/#new-arrivals"
                 className="text-satoshi text-[16px] text-black hover:opacity-70"
               >
                 New Arrivals
               </a>
               <a
-                href="#"
+                href="/#browse-styles"
                 className="text-satoshi text-[16px] text-black hover:opacity-70"
               >
                 Brands
@@ -136,21 +136,21 @@ export default function NavbarSection() {
               <ChevronDownIcon className="h-2 w-3" />
             </button>
             <a
-              href="#"
+              href="/#on-sale"
               className="text-satoshi text-[16px] text-black hover:opacity-70"
               onClick={() => setIsMenuOpen(false)}
             >
               On Sale
             </a>
             <a
-              href="#"
+              href="/#new-arrivals"
               className="text-satoshi text-[16px] text-black hover:opacity-70"
               onClick={() => setIsMenuOpen(false)}
             >
               New Arrivals
             </a>
             <a
-              href="#"
+              href="/#browse-styles"
               className="text-satoshi text-[16px] text-black hover:opacity-70"
               onClick={() => setIsMenuOpen(false)}
             >

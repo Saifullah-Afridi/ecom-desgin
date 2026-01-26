@@ -34,9 +34,9 @@ export default function CartPage() {
                 <div className="flex items-center justify-between ">
                   <span className="font-semibold"> $145</span>
                   <div className=" w-48 bg-gray-300 px-6 rounded-full py-3   flex items-center justify-between">
-                    <span className="cursor-pointer  px-2 ">-</span>
-                    <span className="cursor-pointer  px-2 ">1</span>
-                    <span className="cursor-pointer px-2 ">+</span>
+                    <span className="cursor-pointer  px-2  text-lg">-</span>
+                    <span className="cursor-pointer  px-2  text-lg">1</span>
+                    <span className="cursor-pointer px-2  text-lg">+</span>
                   </div>
                 </div>
               </div>
@@ -65,9 +65,9 @@ export default function CartPage() {
                 <div className="flex items-center justify-between ">
                   <span className="font-semibold"> $145</span>
                   <div className=" w-48 bg-gray-300 px-6 rounded-full py-3   flex items-center justify-between">
-                    <span className="cursor-pointer  px-2 ">-</span>
-                    <span className="cursor-pointer  px-2 ">1</span>
-                    <span className="cursor-pointer px-2 ">+</span>
+                    <span className="cursor-pointer  px-2  text-lg">-</span>
+                    <span className="cursor-pointer  px-2  text-lg">1</span>
+                    <span className="cursor-pointer px-2  text-lg">+</span>
                   </div>
                 </div>
               </div>
@@ -96,9 +96,9 @@ export default function CartPage() {
                 <div className="flex items-center justify-between ">
                   <span className="font-semibold"> $145</span>
                   <div className=" w-48 bg-gray-300 px-6 rounded-full py-3   flex items-center justify-between">
-                    <span className="cursor-pointer  px-2 ">-</span>
-                    <span className="cursor-pointer  px-2 ">1</span>
-                    <span className="cursor-pointer px-2 ">+</span>
+                    <span className="cursor-pointer  px-2  text-lg">-</span>
+                    <span className="cursor-pointer  px-2  text-lg">1</span>
+                    <span className="cursor-pointer px-2  text-lg">+</span>
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function CartPage() {
             </div>
             <div className="flex items-center  justify-between">
               <div className="flex-1 flex items-center h-10 gap-1 bg-[#F0F0F0] px-2  rounded-full ">
-                <Pen />
+                <Pen className="h-4 w-4" />
                 <input
                   className="bg-none border-none outline-none"
                   type="text"

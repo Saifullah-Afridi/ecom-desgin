@@ -14,10 +14,16 @@ export default function HomePage() {
     <div className="min-h-screen">
       <HeroSectionNew />
       <BrandsSection />
-      <NewArrivalsSection />
+      <div id="new-arrivals">
+        <NewArrivalsSection />
+      </div>
       <Separator className="mx-auto max-w-7xl bg-black/10" />
-      <TopSellingSection />
-      <BrowseStyleSection />
+      <div id="top-selling">
+        <TopSellingSection />
+      </div>
+      <div id="browse-styles">
+        <BrowseStyleSection />
+      </div>
       <ReviewsSection />
     </div>
   );

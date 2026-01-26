@@ -6,7 +6,7 @@ export default function BiggerScreenNavigation() {
   return (
     <div className="w-full mx-auto max-w-7xl px-2 md:px-8 lg:px-20 hidden lg:block py-5">
       <div className="flex items-center gap-8 ">
-        <div>
+        <Link href="/">
           <svg
             width="125"
             height="19"
@@ -19,18 +19,18 @@ export default function BiggerScreenNavigation() {
               fill="black"
             />
           </svg>
-        </div>
+        </Link>
         <ul className="flex gap-6 items-center">
           <li>
-            <Link href="/products" className="flex items-center gap-2">
-              <span className="text-[18px]"> Shop </span>
+            <Link href="/products" className="text-[18px]">
+              Shop
             </Link>
           </li>
           <li>
-            <Link href="/">On Scale</Link>
+            <Link href="/#top-selling">Top Selling</Link>
           </li>
           <li>
-            <Link href="/">New Arrivals</Link>
+            <Link href="/#new-arrivals">New Arrivals</Link>
           </li>
           <li>
             <Link href="/">Brands</Link>
@@ -45,7 +45,9 @@ export default function BiggerScreenNavigation() {
           />
         </div>
         <div className="flex items-center gap-4">
-          <ShoppingCart className="cursor-pointer" />
+          <Link href="/cart">
+            <ShoppingCart className="cursor-pointer" />
+          </Link>
           <UserCircle2 className="cursor-pointer" />
         </div>
       </div>

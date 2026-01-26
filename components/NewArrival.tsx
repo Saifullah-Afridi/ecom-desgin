@@ -4,7 +4,7 @@ import ProductCard from "./ui/product-card";
 
 export default function NewArrival() {
   return (
-    <div className="px-2 md:px-8 lg:px-20 py-14">
+    <div id="arrival" className="px-2 md:px-8 lg:px-20 py-14">
       <h2 className=" font-bold text-3xl md:text-4xl lg:text-5xl lg:mb-16 font-bold text-center mb-8 ">
         New Arrival
       </h2>

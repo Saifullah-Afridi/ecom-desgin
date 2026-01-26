@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import SearchIcon from '../icons/search.svg';
-import CartIcon from '../icons/cart.svg';
-import UserIcon from '../icons/user.svg';
-import ChevronDownIcon from '../icons/chevron-down.svg';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import SearchIcon from "../icons/search.svg";
+import CartIcon from "../icons/cart.svg";
+import UserIcon from "../icons/user.svg";
+import ChevronDownIcon from "../icons/chevron-down.svg";
 
 export default function NavbarSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,12 +13,12 @@ export default function NavbarSection() {
   // Prevent scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
@@ -37,21 +37,31 @@ export default function NavbarSection() {
             </button>
 
             {/* Logo */}
-            <h1 className="heading-integral text-[24px] md:text-[32px]">SHOP.CO</h1>
+            <h1 className="heading-integral text-[24px] md:text-[32px]">
+              SHOP.CO
+            </h1>
 
             {/* Navigation - Desktop Only */}
             <nav className="hidden items-center gap-6 lg:flex">
               <button className="text-satoshi flex items-center gap-1 text-[16px] text-black">
                 Shop
-                <ChevronDownIcon className="h-2 w-3" />
               </button>
-              <a href="#" className="text-satoshi text-[16px] text-black hover:opacity-70">
+              <a
+                href="#"
+                className="text-satoshi text-[16px] text-black hover:opacity-70"
+              >
                 On Sale
               </a>
-              <a href="#" className="text-satoshi text-[16px] text-black hover:opacity-70">
+              <a
+                href="#"
+                className="text-satoshi text-[16px] text-black hover:opacity-70"
+              >
                 New Arrivals
               </a>
-              <a href="#" className="text-satoshi text-[16px] text-black hover:opacity-70">
+              <a
+                href="#"
+                className="text-satoshi text-[16px] text-black hover:opacity-70"
+              >
                 Brands
               </a>
             </nav>
@@ -103,7 +113,7 @@ export default function NavbarSection() {
       {/* Mobile Menu Drawer */}
       <div
         className={`fixed left-0 top-0 z-50 h-full w-[300px] bg-white shadow-xl transition-transform duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col p-6">

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <NavbarSection />
+        <Navbar />
         {children}
         <NewsletterSection />
         <FooterSection />

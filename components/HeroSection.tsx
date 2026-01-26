@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <div className="relative min-h-screen bg-[#F2F0F1] md:bg-[url('/images/HeroSection.png')] md:bg-center md:bg-cover md:bg-no-repeat">
       {/* Overlay - only on desktop */}
-      <div className="hidden md:block absolute inset-0 bg-black/50 w-full h-screen z-10"></div>
+      <div className="hidden md:block absolute inset-0 bg-black opacity-50 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 container flex flex-col justify-center min-h-screen px-4 md:px-20 gap-4 md:gap-8 py-[85px]">

@@ -7,10 +7,10 @@ import Image from "next/image";
 export default function CartPage() {
   return (
     <div className="px-4 md:px-8 lg:px-20 mx-auto w-full max-w-7xl bg-white my-20 ">
-      <h1 className="text-3xl font-semibold border-2 ">Your Cart</h1>
+      <h1 className="text-3xl font-semibold my-6 ">Your Cart</h1>
       <div className="flex flex-col lg:flex-row gap-4 ">
         <div className=" w-full lg:w-2/3">
-          <div className="border border-gray-400 p-4 rounded-xl mt-6 flex flex-col gap-4">
+          <div className="border border-gray-400 p-4 rounded-xl  flex flex-col gap-4">
             <div className="flex gap-4 ">
               <div className=" w-32 relative">
                 <Image
@@ -129,8 +129,8 @@ export default function CartPage() {
               <span className=" text-gray-600">Total</span>
               <span className="font-semibold text-lg ">$565</span>
             </div>
-            <div className="flex items-center justify-between">
-              <div className="flex-1 flex items-center gap-1 bg-[#F0F0F0] px-2 py-3 rounded-full ">
+            <div className="flex items-center  justify-between">
+              <div className="flex-1 flex items-center h-10 gap-1 bg-[#F0F0F0] px-2  rounded-full ">
                 <Pen />
                 <input
                   className="bg-none border-none outline-none"
@@ -138,7 +138,7 @@ export default function CartPage() {
                   placeholder="promo code"
                 />
               </div>
-              <Button className="py-2">Apply</Button>
+              <Button className="h-full py-3">Apply</Button>
             </div>
             <Button className="py-5 rounded-full">
               Go to Checkout <ArrowRight />

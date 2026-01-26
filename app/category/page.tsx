@@ -36,7 +36,7 @@ export default function CategoryPage() {
               <CategoryProductCard />
             </div>
             <Separator className="my-2" />
-            <CustomPagination />
+            {/* <CustomPagination /> */}
           </div>
         </div>
       </div>

@@ -1,8 +1,16 @@
+"use client";
+
 import { Search, ShoppingCart, UserCircle2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
 
 export default function BiggerScreenNavigation() {
+  const cartCount = useSelector((state: RootState) =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0),
+  );
+
   return (
     <div className="w-full mx-auto max-w-7xl px-2 md:px-8 lg:px-20 hidden lg:block py-5">
       <div className="flex items-center gap-8 ">
@@ -46,7 +54,14 @@ export default function BiggerScreenNavigation() {
         </div>
         <div className="flex items-center gap-4">
           <Link href="/cart">
-            <ShoppingCart className="cursor-pointer" />
+            <span className="relative inline-flex">
+              <ShoppingCart className="cursor-pointer" />
+              {cartCount > 0 && (
+                <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-xs font-semibold text-white">
+                  {cartCount}
+                </span>
+              )}
+            </span>
           </Link>
           <UserCircle2 className="cursor-pointer" />
         </div>

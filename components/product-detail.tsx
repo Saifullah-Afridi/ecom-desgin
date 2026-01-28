@@ -1,14 +1,17 @@
 "use client";
 
 import { productDetails } from "@/lib/data";
-import { on } from "events";
-import { Check, Hexagon, Star } from "lucide-react";
+import { addItem } from "@/store/slices/cart-slice";
+import type { AppDispatch } from "@/store/store";
+import { Check, Star } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 
 export default function ProductDetail() {
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
   const { productId } = useParams();
   const product = productDetails?.find((product) => product.id === productId);
   const [selectImage, setSelectImage] = useState(product?.image);
@@ -26,6 +29,10 @@ export default function ProductDetail() {
     }
   };
   const onAddToCart = () => {
+    if (!product) {
+      toast.error("Product not found!");
+      return;
+    }
     if (selectColor.hex === "") {
       toast.error("Please select a color!");
       return;
@@ -36,17 +43,16 @@ export default function ProductDetail() {
     }
 
     const productToAdd = {
-      id: product?.id,
-      name: product?.name,
-      price: product?.price,
-      image: product?.image,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
       quantity: quantity,
       size: selectSize,
       color: selectColor.hex,
-      totalPrice: product ? product.price * quantity : 0,
     };
 
-    console.log(productToAdd);
+    dispatch(addItem(productToAdd));
 
     toast.success("Product added to cart!");
     setSelectColor({

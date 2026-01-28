@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import Rating45Icon from './icons/rating-4-5.svg';
-import Rating35Icon from './icons/rating-3-5.svg';
-import Rating5Icon from './icons/rating-5.svg';
-import Rating4Icon from './icons/rating-4.svg';
-import Rating3Icon from './icons/rating-3.svg';
+import Image from "next/image";
+import Rating45Icon from "./icons/rating-4-5.svg";
+import Rating35Icon from "./icons/rating-3-5.svg";
+import Rating5Icon from "./icons/rating-5.svg";
+import Rating4Icon from "./icons/rating-4.svg";
+import Rating3Icon from "./icons/rating-3.svg";
 
 interface ProductCardProps {
   image: string;
@@ -36,28 +36,27 @@ export default function ProductCard({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative aspect-square w-full overflow-hidden rounded-[20px] bg-light-gray">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-        />
+      <div className="relative aspect-square w-full overflow-hidden rounded-md bg-light-gray">
+        <Image src={image} alt={title} fill className="object-cover" />
       </div>
       <h3 className="text-satoshi text-[20px] font-bold text-black">{title}</h3>
-      <div className="flex items-center gap-[13px]">
-        {RatingIcon && <RatingIcon className="h-[18px]" />}
-        <span className="text-satoshi text-[14px] text-black">{ratingText}</span>
+      <div className="flex items-center gap-4">
+        {RatingIcon && <RatingIcon className="h-5" />}
+        <span className="text-satoshi text-[14px] text-black">
+          {ratingText}
+        </span>
       </div>
-      <div className="flex items-center gap-[10px]">
-        <span className="text-satoshi text-[24px] font-bold text-black">${price}</span>
+      <div className="flex items-center gap-2">
+        <span className="text-satoshi text-[24px] font-bold text-black">
+          ${price}
+        </span>
         {originalPrice && (
           <>
             <span className="text-satoshi text-[24px] font-bold text-gray-60 line-through">
               ${originalPrice}
             </span>
             {discount && (
-              <span className="text-satoshi rounded-full bg-red/10 px-[14px] py-[6px] text-[12px] font-medium text-red">
+              <span className="text-satoshi rounded-full bg-red/10 px-[ py-4 text-sm font-medium text-red">
                 -{discount}%
               </span>
             )}

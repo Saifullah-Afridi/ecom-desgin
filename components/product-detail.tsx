@@ -66,7 +66,7 @@ export default function ProductDetail() {
   return (
     <div className="flex flex-col md:flex-row gap-6 mb-10">
       <div className="md:flex-row md:flex-1   flex  flex-col  gap-3">
-        <div className="md:flex-[3]  md:order-2  ">
+        <div className="md:flex-3  md:order-2  ">
           <img
             src={selectImage}
             alt={selectImage}
@@ -187,7 +187,7 @@ export default function ProductDetail() {
             </button>
           </div>
           <button
-            className="flex-[2] bg-black py-3 text-white rounded-full"
+            className="flex-2 bg-black py-3 text-white rounded-full"
             onClick={onAddToCart}
           >
             Add to cart

@@ -105,18 +105,14 @@ export default function ProductDetail() {
         <div className="flex flex-col gap-4">
           <span className="text-sm opacity-60">Choose Size</span>
           <div className="flex gap-2">
-            <span className="py-3  rounded-full bg-gray-500  flex items-center justify-center  flex-1">
-              Small
-            </span>
-            <span className=" py-3 flex items-center justify-center  rounded-full bg-gray-500  flex-1">
-              Medium
-            </span>
-            <span className=" py-3  rounded-full bg-gray-500 flex items-center justify-center flex-1">
-              Large
-            </span>
-            <span className=" py-3  rounded-full bg-gray-500 flex items-center justify-center  flex-1">
-              X-Large
-            </span>
+            {product?.sizes?.map((size, index) => (
+              <span
+                key={index}
+                className="py-3  rounded-full bg-gray-500  flex items-center justify-center  flex-1"
+              >
+                {size}
+              </span>
+            ))}
           </div>
         </div>
         <div className="w-full h-0.5 bg-gray-200"></div>

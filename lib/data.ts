@@ -638,9 +638,9 @@ export const productDetails: ProductDetails[] = [
     description:
       "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     colors: [
-      { name: "Gray", hex: "#808080" },
+      { name: "Gray", hex: "#4A4A4A" },
       { name: "Black", hex: "#000000" },
-      { name: "White", hex: "#FFFFFF" },
+      { name: "Charcoal", hex: "#36454F" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
     stock: 45,
@@ -661,9 +661,9 @@ export const productDetails: ProductDetails[] = [
     description:
       "The ultimate everyday essential. Our Casual Cotton T-Shirt is made from soft, breathable 100% cotton that feels great against your skin. Versatile enough to pair with anything in your wardrobe.",
     colors: [
-      { name: "White", hex: "#FFFFFF" },
       { name: "Black", hex: "#000000" },
-      { name: "Navy", hex: "#000080" },
+      { name: "Navy", hex: "#000033" },
+      { name: "Charcoal", hex: "#36454F" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
     stock: 120,
@@ -684,8 +684,8 @@ export const productDetails: ProductDetails[] = [
     description:
       "The iconic denim jacket that never goes out of style. This classic piece features a perfect fit and quality construction that will last for years. Layer it over any outfit for an instant cool-factor boost.",
     colors: [
-      { name: "Light Blue", hex: "#ADD8E6" },
-      { name: "Dark Blue", hex: "#00008B" },
+      { name: "Dark Blue", hex: "#00004D" },
+      { name: "Navy", hex: "#000033" },
       { name: "Black", hex: "#000000" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
@@ -708,8 +708,8 @@ export const productDetails: ProductDetails[] = [
       "Elevate your winter wardrobe with our Premium Wool Coat. Crafted from high-quality wool blend, this sophisticated coat provides warmth without bulk. Perfect for professional settings or casual outings during cold weather.",
     colors: [
       { name: "Black", hex: "#000000" },
-      { name: "Camel", hex: "#C4A57B" },
-      { name: "Navy", hex: "#000080" },
+      { name: "Charcoal", hex: "#36454F" },
+      { name: "Navy", hex: "#000033" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
     stock: 32,
@@ -730,8 +730,8 @@ export const productDetails: ProductDetails[] = [
     description:
       "A wardrobe staple that works for every occasion. Our Slim Fit Chinos offer a modern, streamlined silhouette while maintaining comfort. Perfect for the office, weekend outings, or casual dinners.",
     colors: [
-      { name: "Khaki", hex: "#F0E68C" },
-      { name: "Navy", hex: "#000080" },
+      { name: "Olive", hex: "#556B2F" },
+      { name: "Navy", hex: "#000033" },
       { name: "Black", hex: "#000000" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
@@ -753,9 +753,9 @@ export const productDetails: ProductDetails[] = [
     description:
       "Stay cool and stylish this summer with our breathable Linen Shirt. Made from 100% pure linen, this shirt keeps you comfortable in hot weather while maintaining a relaxed, sophisticated look.",
     colors: [
-      { name: "White", hex: "#FFFFFF" },
-      { name: "Light Blue", hex: "#ADD8E6" },
-      { name: "Beige", hex: "#F5F5DC" },
+      { name: "Charcoal", hex: "#36454F" },
+      { name: "Dark Blue", hex: "#00004D" },
+      { name: "Brown", hex: "#654321" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
     stock: 110,
@@ -777,7 +777,7 @@ export const productDetails: ProductDetails[] = [
       "Make a statement in our Black Formal Trousers. Tailored to perfection with impeccable finishes, these trousers are ideal for business meetings, formal events, and professional settings.",
     colors: [
       { name: "Black", hex: "#000000" },
-      { name: "Navy", hex: "#000080" },
+      { name: "Navy", hex: "#000033" },
       { name: "Charcoal", hex: "#36454F" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
@@ -799,9 +799,9 @@ export const productDetails: ProductDetails[] = [
     description:
       "Add a touch of casual charm to your wardrobe with our Checkered Casual Shirt. Featuring a timeless checkered pattern, this shirt is versatile enough for weekend hangouts or casual workplace settings.",
     colors: [
-      { name: "Red & White", hex: "#FF0000" },
-      { name: "Blue & White", hex: "#0000FF" },
-      { name: "Green & White", hex: "#008000" },
+      { name: "Dark Red", hex: "#8B0000" },
+      { name: "Navy", hex: "#000080" },
+      { name: "Dark Green", hex: "#004D00" },
     ],
     sizes: ["Small", "Medium", "Large", "X-Large"],
     stock: 78,

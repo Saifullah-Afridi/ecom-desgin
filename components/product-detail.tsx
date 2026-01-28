@@ -3,43 +3,53 @@
 import { productDetails } from "@/lib/data";
 import { Check, Star } from "lucide-react";
 import { useParams } from "next/navigation";
+import { useState } from "react";
 
 export default function ProductDetail() {
   const { productId } = useParams();
-  console.log(productId);
-
   const product = productDetails?.find((product) => product.id === productId);
-  console.log(product);
+  const [selectImage, setSelectImage] = useState(product?.image);
+
+  console.log(selectImage);
 
   return (
     <div className="flex flex-col md:flex-row gap-6 mb-10">
       <div className="md:flex-row md:flex-1   flex  flex-col  gap-3">
         <div className="md:flex-[3]  md:order-2  ">
           <img
-            src={product?.image}
-            alt={product?.image}
+            src={selectImage}
+            alt={selectImage}
             className="object-cover w-full h-full rounded-xl"
           />
         </div>
         <div className="md:flex-1 flex md:order-1 md:flex-col gap-2">
-          <div className="aspect-square md:flex-1 ">
+          <div
+            className="aspect-square md:flex-1 "
+            onClick={() => setSelectImage("/products/product1.png")}
+          >
             <img
-              src={product?.image}
-              alt={product?.image}
+              src="/products/product1.png"
+              alt="/products/product1.png"
               className="object-cover w-full h-full rounded-xl"
             />
           </div>
-          <div className="aspect-square md:flex-1 ">
+          <div
+            className="aspect-square md:flex-1 "
+            onClick={() => setSelectImage("/images/single-product-image.jpg")}
+          >
             <img
               src="/images/single-product-image.jpg"
               alt="Product Image"
               className="object-cover w-full h-full rounded-xl "
             />
           </div>
-          <div className="aspect-square md:flex-1">
+          <div
+            className="aspect-square md:flex-1"
+            onClick={() => setSelectImage(product?.image)}
+          >
             <img
-              src="/images/single-product-image.jpg"
-              alt="Product Image"
+              src={product?.image}
+              alt={product?.image}
               className="object-cover w-full h-full rounded-xl"
             />
           </div>
@@ -79,15 +89,14 @@ export default function ProductDetail() {
         <div className="flex flex-col gap-4">
           <span className="text-sm md:text-base opacity-60">Select Colors</span>
           <div className="flex gap-3 items-center">
-            <span className="p-2 rounded-full bg-gray-500 ">
-              <Check color="white" />
-            </span>
-            <span className="p-2 rounded-full bg-gray-500 ">
-              <Check />
-            </span>
-            <span className="p-2 rounded-full bg-gray-500">
-              <Check />
-            </span>
+            {product?.colors?.map((color) => (
+              <span
+                key={color?.name}
+                className={`p-2 rounded-full bg-[${color?.hex}] `}
+              >
+                <Check className="text-yellow-400" />
+              </span>
+            ))}
           </div>
         </div>
 

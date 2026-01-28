@@ -39,12 +39,12 @@ export default function ProductCard({
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className="font-bold text-xl  md:text-2xl">{price}</span>
+          <span className="font-bold text-xl  md:text-2xl">{price}$</span>
           <span className="font-bold text-xl  md:text-2xl opacity-40">
-            {originalPrice}
+            {originalPrice}$
           </span>
           <span className="font-medium py-1 px-3 bg-[#FF33331A] rounded-full text-xs md:text-sm">
-            {discount}
+            {discount}%
           </span>
         </div>
       </div>

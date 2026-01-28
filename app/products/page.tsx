@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { SlidersVertical } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
-import CustomPagination from "@/components/pagination";
+import { products } from "@/lib/data";
+import ProductCard from "@/components/ui/product-card";
 
 export default function CategoryPage() {
   return (
@@ -28,12 +29,9 @@ export default function CategoryPage() {
 
           <div className="">
             <div className="grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 grid">
-              <CategoryProductCard />
-              <CategoryProductCard />
-              <CategoryProductCard />
-              <CategoryProductCard />
-              <CategoryProductCard />
-              <CategoryProductCard />
+              {products.map((product) => (
+                <ProductCard key={product.id} {...product}></ProductCard>
+              ))}
             </div>
             <Separator className="my-2" />
             {/* <CustomPagination /> */}

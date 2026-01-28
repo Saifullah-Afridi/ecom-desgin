@@ -1,5 +1,4 @@
 import ProductCard from "./ui/product-card";
-import NewCard from "./ui/product-card";
 
 export default function ProductList() {
   return (

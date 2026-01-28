@@ -1,16 +1,61 @@
 "use client";
 
 import { productDetails } from "@/lib/data";
-import { Check, Star } from "lucide-react";
-import { useParams } from "next/navigation";
+import { on } from "events";
+import { Check, Hexagon, Star } from "lucide-react";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function ProductDetail() {
+  const router = useRouter();
   const { productId } = useParams();
   const product = productDetails?.find((product) => product.id === productId);
   const [selectImage, setSelectImage] = useState(product?.image);
+  const [selectColor, setSelectColor] = useState({
+    hex: "",
+  });
+  const [quantity, setQuantity] = useState(1);
+  const [selectSize, setSelectSize] = useState("");
 
-  console.log(selectImage);
+  const handleQuantityChange = (type: "increment" | "decrement") => {
+    if (type === "increment") {
+      setQuantity((prev) => prev + 1);
+    } else {
+      setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+    }
+  };
+  const onAddToCart = () => {
+    if (selectColor.hex === "") {
+      toast.error("Please select a color!");
+      return;
+    }
+    if (selectSize === "") {
+      toast.error("Please select a size!");
+      return;
+    }
+
+    const productToAdd = {
+      id: product?.id,
+      name: product?.name,
+      price: product?.price,
+      image: product?.image,
+      quantity: quantity,
+      size: selectSize,
+      color: selectColor.hex,
+      totalPrice: product ? product.price * quantity : 0,
+    };
+
+    console.log(productToAdd);
+
+    toast.success("Product added to cart!");
+    setSelectColor({
+      hex: "",
+    });
+    setQuantity(1);
+    setSelectSize("");
+    router.refresh();
+  };
 
   return (
     <div className="flex flex-col md:flex-row gap-6 mb-10">
@@ -91,10 +136,11 @@ export default function ProductDetail() {
           <div className="flex gap-3 items-center">
             {product?.colors?.map((color) => (
               <span
-                key={color?.name}
-                className={`p-2 rounded-full bg-[${color?.hex}] `}
+                key={color?.hex}
+                onClick={() => setSelectColor(color)}
+                className={`h-10 w-10 rounded-full bg-[${color?.hex}] flex items-center justify-center   border border-gray-400 ${selectColor.hex === color.hex ? "border-2 border-black  p-1" : ""}`}
               >
-                <Check className="text-yellow-400" />
+                {selectColor.hex === color.hex && <Check color="blue" />}
               </span>
             ))}
           </div>
@@ -108,7 +154,8 @@ export default function ProductDetail() {
             {product?.sizes?.map((size, index) => (
               <span
                 key={index}
-                className="py-3  rounded-full bg-gray-500  flex items-center justify-center  flex-1"
+                className={`py-3  rounded-full ${selectSize === size ? "bg-blue-500 text-white" : "bg-gray-500"}  flex items-center justify-center  flex-1`}
+                onClick={() => setSelectSize(size)}
               >
                 {size}
               </span>
@@ -119,11 +166,24 @@ export default function ProductDetail() {
 
         <div className="flex gap-3">
           <div className="flex-1 bg-gray-400 px-4 flex  justify-between gap-3 items-center py-3 rounded-full">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button
+              className="cursor-pointer text-lg"
+              onClick={() => handleQuantityChange("decrement")}
+            >
+              -
+            </button>
+            <span>{quantity}</span>
+            <button
+              className="cursor-pointer text-lg"
+              onClick={() => handleQuantityChange("increment")}
+            >
+              +
+            </button>
           </div>
-          <button className="flex-[2] bg-black py-3 text-white rounded-full">
+          <button
+            className="flex-[2] bg-black py-3 text-white rounded-full"
+            onClick={onAddToCart}
+          >
             Add to cart
           </button>
         </div>

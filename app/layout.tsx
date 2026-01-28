@@ -4,6 +4,7 @@ import FooterSection from "@/components/homepage/footer-section";
 import NavbarSection from "@/components/homepage/navbar-section";
 import NewsletterSection from "@/components/homepage/newsletter-section";
 import Navbar from "@/components/Navbar";
+import ToastProvider from "@/provider/toast-provider";
 
 export const metadata: Metadata = {
   title: "SHOP.CO - Find Clothes That Matches Your Style",
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Navbar />
-        {children}
-        <NewsletterSection />
-        <FooterSection />
+        <ToastProvider>
+          <Navbar />
+          {children}
+          <NewsletterSection />
+          <FooterSection />
+        </ToastProvider>
       </body>
     </html>
   );
